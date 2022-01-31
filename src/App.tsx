@@ -1,25 +1,91 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useMemo } from 'react';
+import "./App.css";
+import { Typography, Grid, Button, Paper, Switch} from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import NavBar, { ColorModeContext } from './components/NavBar';
+import Home from './pages/Home/Home';
+import Footer from './components/Footer';
 
-function App() {
+//const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
+const App = () => {
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+  const theme = useMemo(
+    () =>
+      mode === 'light' ?
+      createTheme({
+        palette: {
+          mode,
+          text: {
+            secondary: "#BF3755"
+          }
+        },
+        typography: {
+          fontFamily: [
+            'Poppins',
+            'sans-serif'
+          ].join(','),
+          button: {
+            textTransform: "none"
+          }
+        },
+        shape: {
+          borderRadius: 10,
+        },
+      }) :
+      createTheme({
+        palette: {
+          mode,
+          text: {
+            secondary: "#234555"
+          }
+        },
+        typography: {
+          fontFamily: [
+            'Poppins',
+            'sans-serif'
+          ].join(','),
+          button: {
+            textTransform: "none"
+          }
+        },
+        shape: {
+          borderRadius: 10,
+        },
+      }),
+    [mode],
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <Paper sx={{height:"500vh"}} square>
+          <Grid container direction="column" spacing={8}>
+            <Grid item xs={12}>
+              <NavBar/>
+            </Grid>
+            <Grid item container xs={12}>
+              <Grid item xs={0} md={2}></Grid>
+              <Grid item xs={12} md={8}>
+                <Home/>
+              </Grid>
+              <Grid item xs={0} md={2}></Grid>
+            </Grid>
+            {/* <Grid item xs={12}>
+              <Footer/>
+            </Grid> */}
+          </Grid>
+        </Paper>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
