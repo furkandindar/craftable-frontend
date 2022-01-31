@@ -25,7 +25,13 @@ const App = () => {
         palette: {
           mode,
           text: {
-            secondary: "#BF3755"
+            secondary: "#82368C"
+          },
+          primary: {
+            main: "#82368C"
+          },
+          secondary: {
+            main: "#82368C"
           }
         },
         typography: {
@@ -79,9 +85,9 @@ const App = () => {
               </Grid>
               <Grid item xs={0} md={2}></Grid>
             </Grid>
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
               <Footer/>
-            </Grid> */}
+            </Grid>
           </Grid>
         </Paper>
       </ThemeProvider>

@@ -58,7 +58,7 @@ const BrowseSection = () => {
             </Grid>
         </Grid>
         <Grid item container justifyContent="center">
-            <Button disableRipple sx={{backgroundColor:"#BF3755", color:"white", '&:hover':{backgroundColor:"#AB314C"}}}>Explore More</Button>
+            <Button disableRipple variant="contained">Explore More</Button>
         </Grid>
     </Grid>
   );

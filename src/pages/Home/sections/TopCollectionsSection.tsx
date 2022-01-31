@@ -120,7 +120,7 @@ const TopCollectionsSection = () => {
             </Grid>
         </Collapse> */}
         <Grid item container justifyContent="center">
-            <Button onClick={handleExpand} disableRipple sx={{backgroundColor:"#BF3755", color:"white", '&:hover':{backgroundColor:"#AB314C"}}}>Go to Rankings</Button>
+            <Button variant='contained' onClick={handleExpand} disableRipple>Go to Rankings</Button>
         </Grid>
     </Grid>
   );
