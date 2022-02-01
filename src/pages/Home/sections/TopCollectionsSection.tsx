@@ -3,9 +3,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import MiniCollectionCard from '../../../components/MiniCollectionCard';
-import Collapse from '@mui/material/Collapse';
-import Grow from '@mui/material/Grow';
-
 const TopCollectionsSection = () => {
     const [expand, setExpand] = useState(false);
 

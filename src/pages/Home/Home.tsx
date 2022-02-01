@@ -5,6 +5,8 @@ import ExploreSection from './sections/ExploreSection';
 import RecentlyListedSection from './sections/RecentlyListedSection';
 import TopCollectionsSection from './sections/TopCollectionsSection';
 import BrowseSection from './sections/BrowseSection';
+import HelpSection from './sections/HelpSection';
+import ResourcersSection from './sections/ResourcersSection';
 
 const Home = () => {
   return (
@@ -23,6 +25,12 @@ const Home = () => {
           </Grid>
           <Grid item>
               <BrowseSection/>
+          </Grid>
+          <Grid item>
+              <HelpSection/>
+          </Grid>
+          <Grid item>
+              <ResourcersSection/>
           </Grid>
       </Grid>
   );

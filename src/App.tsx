@@ -73,7 +73,7 @@ const App = () => {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <Paper sx={{height:"500vh"}} square>
+        <Paper square>
           <Grid container direction="column" spacing={8}>
             <Grid item xs={12}>
               <NavBar/>

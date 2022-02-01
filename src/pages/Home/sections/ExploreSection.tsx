@@ -103,15 +103,19 @@ const NftCard = () => {
 const ExploreSection = () => {
   return (
   <Grid container direction="column" spacing={5} justifyContent="space-between">
-      <Grid item>
+      <Grid item xs={12}>
       <Typography align='center' variant='h5' sx={{fontWeight:"bold"}}>Explore</Typography>
       </Grid>
-      <Grid item>
-      <Stack direction="row" spacing={2}>
-        <ChestCard/>
-        <CraftCard/>
-        <NftCard/>
-      </Stack>
+      <Grid item container direction="row" xs={12} spacing={3}>
+        <Grid item xs={12} md={4}>
+          <ChestCard/>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <CraftCard/>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <NftCard/>
+        </Grid>
       </Grid>
   </Grid>
   );
