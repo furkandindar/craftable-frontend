@@ -6,7 +6,7 @@ import RecentlyListedSection from './sections/RecentlyListedSection';
 import TopCollectionsSection from './sections/TopCollectionsSection';
 import BrowseSection from './sections/BrowseSection';
 import HelpSection from './sections/HelpSection';
-import ResourcersSection from './sections/ResourcersSection';
+import ResourcesSection from './sections/ResourcesSection';
 
 const Home = () => {
   return (
@@ -30,7 +30,7 @@ const Home = () => {
               <HelpSection/>
           </Grid>
           <Grid item>
-              <ResourcersSection/>
+              <ResourcesSection/>
           </Grid>
       </Grid>
   );

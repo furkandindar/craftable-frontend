@@ -31,7 +31,7 @@ const App = () => {
             main: "#82368C"
           },
           secondary: {
-            main: "#82368C"
+            main: "#E3E3E3"
           }
         },
         typography: {
