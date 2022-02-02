@@ -11,7 +11,7 @@ import { AvaxIcon } from '../assets/icons';
 
 const MiniCollectionCard = () => {
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" sx={{'&:hover':{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px;", cursor:"pointer"}}}>
         <Grid container direction="row" alignItems="center" sx={{paddingY:"0.5rem",paddingX:"0.8rem"}}>
             <Grid item xs={1}>
                 <Typography fontWeight="bold">1</Typography>

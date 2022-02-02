@@ -20,8 +20,10 @@ const MainSection = () => {
                 <Link color="text.secondary" sx={{fontFamily:"Poppins"}} variant="body2">Learn more about</Link>
               </Stack>
           </Grid>
-          <Grid item xs={12} md={5} container justifyContent="center">
-              <FeaturedNftCard/>
+          <Grid item xs={12} md={5} container justifyContent="flex-end">
+              <Grid item>
+                <FeaturedNftCard/>
+              </Grid>
           </Grid>
       </Grid>
   );

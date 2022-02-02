@@ -24,3 +24,58 @@ export const BlackAvaxIcon = createSvgIcon(
   </svg>,
     'BlackAvax',
 );
+
+export const ChestIcon = createSvgIcon(
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 64.588 64.588">
+  <defs>
+    <filter id="circlestop" x="0" y="0" filterUnits="userSpaceOnUse">
+      <feOffset dy="3"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#circlestop)">
+    <path id="circlestop-2" data-name="circlestop" d="M26.294,52.588a25.793,25.793,0,0,1-10.22-2.08A25.728,25.728,0,0,1,2.08,36.513a26.144,26.144,0,0,1,0-20.439A25.728,25.728,0,0,1,16.074,2.08a26.144,26.144,0,0,1,20.439,0A25.728,25.728,0,0,1,50.507,16.074a26.144,26.144,0,0,1,0,20.439A25.728,25.728,0,0,1,36.513,50.507a25.793,25.793,0,0,1-10.22,2.08ZM39.441,16.434a3.2,3.2,0,0,0-.949-2.311,3.133,3.133,0,0,0-2.337-.976H16.434a3.333,3.333,0,0,0-3.287,3.287v19.72a3.136,3.136,0,0,0,.976,2.337,3.194,3.194,0,0,0,2.311.949h19.72a3.243,3.243,0,0,0,3.287-3.287Z" transform="translate(6 3)" fill="#fff"/>
+  </g>
+</svg>,
+    'Chest',
+
+);
+
+export const CraftIcon = createSvgIcon(
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 55.997 55.994">
+  <defs>
+    <filter id="settingsandroid" x="0" y="0" filterUnits="userSpaceOnUse">
+      <feOffset dy="3"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#settingsandroid)">
+    <path id="settingsandroid-2" data-name="settingsandroid" d="M41.257,24.747H27.508A2.787,2.787,0,0,1,24.759,27.5h-5.5A2.623,2.623,0,0,1,17.3,26.68a2.676,2.676,0,0,1-.8-1.933H2.761a2.623,2.623,0,0,1-1.955-.816,2.7,2.7,0,0,1-.8-1.955,2.628,2.628,0,0,1,.8-1.933,2.663,2.663,0,0,1,1.955-.8H16.509a2.716,2.716,0,0,1,2.75-2.75h5.5a2.716,2.716,0,0,1,2.75,2.75H41.258a2.715,2.715,0,0,1,2.75,2.728,2.7,2.7,0,0,1-.8,1.955,2.617,2.617,0,0,1-1.955.816Zm-16.5-5.5h-5.5v5.5h5.5v-5.5Zm16.5-11h-2.75a2.642,2.642,0,0,1-.816,1.933A2.642,2.642,0,0,1,35.758,11h-5.5a2.623,2.623,0,0,1-1.955-.816,2.676,2.676,0,0,1-.8-1.933H2.761A2.623,2.623,0,0,1,.806,7.433a2.7,2.7,0,0,1-.8-1.955,2.628,2.628,0,0,1,.8-1.933,2.663,2.663,0,0,1,1.955-.8H27.508A2.657,2.657,0,0,1,28.3.8,2.657,2.657,0,0,1,30.258,0h5.5a2.657,2.657,0,0,1,1.955.8,2.657,2.657,0,0,1,.8,1.955h2.75a2.715,2.715,0,0,1,2.75,2.728,2.7,2.7,0,0,1-.8,1.955,2.617,2.617,0,0,1-1.955.816Zm-5.5-5.5h-5.5v5.5h5.5V2.75Zm-33,33H5.51A2.716,2.716,0,0,1,8.26,33h5.5a2.676,2.676,0,0,1,1.933.8,2.623,2.623,0,0,1,.816,1.955H41.255a2.749,2.749,0,0,1,0,5.5H16.509a2.623,2.623,0,0,1-.816,1.955,2.676,2.676,0,0,1-1.933.8h-5.5a2.623,2.623,0,0,1-1.955-.816,2.676,2.676,0,0,1-.8-1.933H2.761A2.623,2.623,0,0,1,.806,40.43a2.7,2.7,0,0,1-.8-1.955,2.628,2.628,0,0,1,.8-1.933,2.663,2.663,0,0,1,1.955-.8Zm5.5,5.5h5.5v-5.5H8.26Z" transform="translate(5.99 3)" fill="#fff"/>
+  </g>
+</svg>,'Craft'
+
+);
+
+export const NftIcon = createSvgIcon(
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 58 57.928">
+  <defs>
+    <filter id="social-delicious" x="0" y="0" width="58" height="57.928" filterUnits="userSpaceOnUse">
+      <feOffset dy="3"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#social-delicious)">
+    <path id="social-delicious-2" data-name="social-delicious" d="M28.76,28.708V5.779h-23v23h23V51.707h23v-23Z" transform="translate(0.24 -2.78)" fill="#fff"/>
+  </g>
+</svg>,
+'Nft'
+);

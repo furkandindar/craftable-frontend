@@ -10,12 +10,12 @@ import Stack from '@mui/material/Stack';
 
 const FeaturedNftCard = () => {
   return (
-    <Card sx={{ maxWidth: 345, '&:hover':{boxShadow: '0px 0px 9px 1px rgba(43,43,43,0.74)'} }}>
+    <Card sx={{ '&:hover':{boxShadow: '0px 0px 9px 1px rgba(43,43,43,0.74)'} }}>
     <CardActionArea disableRipple>
       <CardMedia
         component="img"
-        height="300"
-        image={require("../assets/mainCardPlaceholder.jpeg")}
+        height="400"
+        image={require("../assets/chestImgPlaceholder.png")}
         alt="NFT"
       />
       <CardContent>

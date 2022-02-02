@@ -11,7 +11,7 @@ const RecentlyListedSection = () => {
           <Grid item>
             <Typography align='center' variant='h5' sx={{fontWeight:"bold"}}>Recently Listed</Typography>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <Carousel isRTL={false} itemsToShow={5} itemsToScroll={5}>
                   <MiniNftCard/>
                   <MiniNftCard/>

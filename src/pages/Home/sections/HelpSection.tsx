@@ -23,8 +23,7 @@ const HelpItem = (props: HelpItemProps) => {
 
 const HelpSection = () => {
   return (
-      <Box bgcolor="#FAFAFA">
-          <Grid container direction="column" spacing={5} justifyContent="space-between">
+    <Grid container direction="column" spacing={5} justifyContent="space-between">
         <Grid item xs={12}>
             <Typography align='center' variant='h5' sx={{fontWeight:"bold"}}>Quick Help</Typography>
         </Grid>
@@ -40,10 +39,9 @@ const HelpSection = () => {
             </Grid>
             <Grid item xs={12} md={3}>
             <HelpItem title="List them for sale" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
-            </Grid>
         </Grid>
-      </Grid>
-      </Box>
+        </Grid>
+    </Grid>
   );
 };
 

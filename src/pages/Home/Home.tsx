@@ -7,10 +7,11 @@ import TopCollectionsSection from './sections/TopCollectionsSection';
 import BrowseSection from './sections/BrowseSection';
 import HelpSection from './sections/HelpSection';
 import ResourcesSection from './sections/ResourcesSection';
+import Box from '@mui/material/Box';
 
 const Home = () => {
   return (
-      <Grid container direction="column" spacing={10}>
+          <Grid container direction="column" spacing={10}>
           <Grid item>
               <MainSection/>
           </Grid>

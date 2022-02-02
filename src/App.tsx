@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import "./App.css";
-import { Typography, Grid, Button, Paper, Switch} from '@mui/material';
+import { Typography, Grid, Button, Paper, Switch, Box} from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar, { ColorModeContext } from './components/NavBar';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer';
+import backgroundImg from "./assets/backgroundImg.png"
 
 //const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -79,11 +80,11 @@ const App = () => {
               <NavBar/>
             </Grid>
             <Grid item container xs={12}>
-              <Grid item xs={0} md={2}></Grid>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={0} md={1.25}></Grid>
+              <Grid item xs={12} md={9.5}>
                 <Home/>
               </Grid>
-              <Grid item xs={0} md={2}></Grid>
+              <Grid item xs={0} md={1.25}></Grid>
             </Grid>
             <Grid item xs={12}>
               <Footer/>

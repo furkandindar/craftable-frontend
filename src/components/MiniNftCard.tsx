@@ -29,13 +29,13 @@ import { BlackAvaxIcon, AvaxIcon } from '../assets/icons';
 
 const MiniNftCard = () => {
   return (
-    <Card sx={{ maxWidth: 200, height:230 }} variant="outlined">
+    <Card sx={{ maxWidth: 200, height:230, marginY:1, '&:hover':{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px;", cursor:"pointer", backgroundColor:"#FAF9F6"} }} variant="outlined">
     <CardActions disableSpacing sx={{paddingY:0, paddingX:"2px", justifyContent:"flex-end", alignItems:"flex-start"}}>
       <Stack direction='row' spacing={0}>
-        <IconButton size='small' sx={{padding:0}}>
+        <IconButton disableRipple size='small' sx={{padding:0}}>
           <FavoriteBorderOutlinedIcon sx={{fontSize:"15px"}}/>
         </IconButton>
-        <IconButton size='small'>
+        <IconButton disableRipple size='small'>
           <GradeOutlinedIcon sx={{fontSize:"15px"}}/>
         </IconButton>
       </Stack>

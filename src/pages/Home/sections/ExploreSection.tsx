@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
+import { ChestIcon, CraftIcon, NftIcon } from '../../../assets/icons';
 
 const WhiteTypography = styled(Typography)(({ theme }) => ({
   ...theme.typography,
@@ -15,18 +16,17 @@ const WhiteTypography = styled(Typography)(({ theme }) => ({
 
 const ChestCard = () => {
   return (
-    <Card>
+    <Card sx={{'&:hover':{transform: "translate3d(0px, -10px, 0px)",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}}}>
       <CardActionArea disableRipple>
         <CardMedia
           component="img"
-          height="400"
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={require("../../../assets/chestImgPlaceholder.png")}
           alt="green iguana"
         />
         <CardContent sx={{backgroundColor:"#82368C"}}>
-          <Grid container justifyContent="center" direction="column">
+          <Grid container justifyContent="center" direction="column" spacing={1}>
             <Grid item xs={12} container justifyContent="center">
-              <WhiteTypography gutterBottom variant="subtitle1" sx={{fontWeight:"bold"}}>
+              <WhiteTypography variant="subtitle1" sx={{fontWeight:"bold"}}>
                 CHEST
               </WhiteTypography>
             </Grid>
@@ -34,6 +34,9 @@ const ChestCard = () => {
               <WhiteTypography variant="body2" align='center'>
                 Lorem ipsum dolir sit amet, consetetur sadipscing elitr.
               </WhiteTypography>
+            </Grid>
+            <Grid item container justifyContent="center" xs={12}>
+              <ChestIcon sx={{width:"50px",height:"50px"}}/>
             </Grid>
           </Grid>
         </CardContent>
@@ -44,18 +47,17 @@ const ChestCard = () => {
 
 const CraftCard = () => {
   return (
-    <Card>
+    <Card sx={{'&:hover':{transform: "translate3d(0px, -10px, 0px)",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}}}>
       <CardActionArea disableRipple>
         <CardMedia
           component="img"
-          height="400"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          image={require("../../../assets/craftImgPlaceholder.png")}
+          alt="craft"
         />
         <CardContent sx={{backgroundColor:"#BF3855"}}>
-        <Grid container justifyContent="center" direction="column">
+        <Grid container justifyContent="center" direction="column" spacing={1}>
             <Grid item xs={12} container justifyContent="center">
-              <WhiteTypography gutterBottom variant="subtitle1" sx={{fontWeight:"bold"}}>
+              <WhiteTypography variant="subtitle1" sx={{fontWeight:"bold"}}>
                 CRAFT
               </WhiteTypography>
             </Grid>
@@ -63,6 +65,9 @@ const CraftCard = () => {
               <WhiteTypography variant="body2" align='center'>
                 Lorem ipsum dolir sit amet, consetetur sadipscing elitr.
               </WhiteTypography>
+            </Grid>
+            <Grid item container justifyContent="center" xs={12}>
+              <CraftIcon sx={{width:"50px",height:"50px"}}/>
             </Grid>
           </Grid>
         </CardContent>
@@ -73,18 +78,17 @@ const CraftCard = () => {
 
 const NftCard = () => {
   return (
-    <Card>
+    <Card sx={{'&:hover':{transform: "translate3d(0px, -10px, 0px)",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px;"}}}>
       <CardActionArea disableRipple>
         <CardMedia
           component="img"
-          height="400"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          image={require("../../../assets/nftImgPlaceholder.png")}
+          alt="NFT"
         />
         <CardContent sx={{backgroundColor:"#36858C"}}>
-        <Grid container justifyContent="center" direction="column">
+        <Grid container justifyContent="center" direction="column" spacing={1}>
             <Grid item xs={12} container justifyContent="center">
-              <WhiteTypography gutterBottom variant="subtitle1" sx={{fontWeight:"bold"}}>
+              <WhiteTypography variant="subtitle1" sx={{fontWeight:"bold"}}>
                 NFT
               </WhiteTypography>
             </Grid>
@@ -92,6 +96,9 @@ const NftCard = () => {
               <WhiteTypography variant="body2" align='center'>
                 Lorem ipsum dolir sit amet, consetetur sadipscing elitr.
               </WhiteTypography>
+            </Grid>
+            <Grid item container justifyContent="center" xs={12}>
+              <NftIcon sx={{width:"50px",height:"50px"}}/>
             </Grid>
           </Grid>
         </CardContent>
