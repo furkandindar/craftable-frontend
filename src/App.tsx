@@ -6,6 +6,9 @@ import NavBar, { ColorModeContext } from './components/NavBar';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer';
 import backgroundImg from "./assets/backgroundImg.png"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from './pages/Layout';
+import Bond from './pages/Bond/Bond';
 import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
 
@@ -78,29 +81,12 @@ const App = () => {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <Paper square>
-          <Grid container direction="column" spacing={8}>
-            <Grid item xs={12}>
-              <NavBar/>
-            </Grid>
-            <Grid item container xs={12} sx={{backgroundColor:"#f9f9f9"}}>
-              <Grid item xs={1.25}></Grid>
-              <Grid item xs={9.5}>
-                <Container maxWidth="xl">
-                  {/* <Home/> */}
-                  {/* <MarketPlace/> */}
-                  <NftDetail/>
-                </Container>
-              </Grid>
-              <Grid item xs={1.25}></Grid>
-            </Grid>
-            <Grid item xs={12}>
-              <Footer/>
-            </Grid>
-          </Grid>
-        </Paper>
-      </ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout childComponent={<Home></Home>} theme={theme} />}/>
+          <Route path="/Bond" element={<Layout childComponent={<Bond></Bond>} theme={theme} />} />
+        </Routes>
+      </BrowserRouter>
     </ColorModeContext.Provider>
   );
 }
