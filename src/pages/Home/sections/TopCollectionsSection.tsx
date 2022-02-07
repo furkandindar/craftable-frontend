@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
+import { CustomButtonPrimary } from '../../../components/CustomButtons';
 import MiniCollectionCard from '../../../components/MiniCollectionCard';
 const TopCollectionsSection = () => {
     const [expand, setExpand] = useState(false);
@@ -100,24 +101,10 @@ const TopCollectionsSection = () => {
             </Grid>
             </>}
         </Grid>
-        {/* <Collapse in={expand} timeout="auto" unmountOnExit>
-            <Grid item container direction="row" justifyContent="center" spacing={3}>
-            <Grid item xs={12} md={4}>
-            <MiniCollectionCard/>
-            </Grid>
-            <Grid item xs={12} md={4}>
-            <MiniCollectionCard/>
-            </Grid>
-            <Grid item xs={12} md={4}>
-            <MiniCollectionCard/>
-            </Grid>
-            <Grid item xs={12} md={4}>
-            <MiniCollectionCard/>
-            </Grid>
-            </Grid>
-        </Collapse> */}
         <Grid item container justifyContent="center">
-            <Button variant='contained' onClick={handleExpand} disableRipple>Go to Rankings</Button>
+            <Grid item xs={2}>
+                <CustomButtonPrimary fullWidth size='large' disableRipple onClick={handleExpand}>Go to Rankings</CustomButtonPrimary>
+            </Grid>
         </Grid>
     </Grid>
   );

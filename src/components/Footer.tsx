@@ -15,61 +15,12 @@ import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import backgroundImg from "../assets/footer_bg.png";
 import Paper from '@mui/material/Paper';
+import CustomTextField from './CustomTextField';
+import CustomButton from './CustomButton';
 
 const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
 const otherLinks = ['My Dashboard',"NFT's","New"];
 const helpLinks = ['Help Desk', 'Who We Are', 'Who We Are', 'How To Craft', 'How To Create Chest', 'How To Create NFT'];
-const blue = {
-  200: '#80BFFF',
-  400: '#3399FF',
-};
-
-const grey = {
-  50: '#F3F6F9',
-  100: '#E7EBF0',
-  200: '#E0E3E7',
-  300: '#CDD2D7',
-  400: '#B2BAC2',
-  500: '#A0AAB4',
-  600: '#6F7E8C',
-  700: '#3E5060',
-  800: '#2D3843',
-  900: '#1A2027',
-};
-
-const StyledInputElement = styled('input')(
-  ({ theme }) => `
-  width: 320px;
-  font-size: 0.875rem;
-  font-family: Poppins, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-  background: ${theme.palette.mode === 'dark' ? grey[900] : "#FFFFFF"};
-  border: 1px solid ${theme.palette.mode === 'dark' ? grey[800] : grey[300]};
-  border-radius: 12px;
-  padding: 12px 12px;
-  transition: all 150ms ease;
-
-  &:hover {
-    background: ${theme.palette.mode === 'dark' ? '' : "#FFFFFF"};
-    border-color: ${theme.palette.mode === 'dark' ? grey[700] : grey[400]};
-  }
-
-  &:focus {
-    outline: none;
-  }
-`,
-);
-
-const CustomInput = React.forwardRef(function CustomInput(
-    props: InputUnstyledProps,
-    ref: React.ForwardedRef<HTMLDivElement>,
-  ) {
-    return (
-      <InputUnstyled components={{ Input: StyledInputElement }} {...props} ref={ref} />
-    );
-  });
 
 const WhiteTypography = styled(Typography)(({ theme }) => ({
     ...theme.typography,
@@ -83,11 +34,19 @@ const CustomLink = styled(Link)(({ theme }) => ({
     
   }));
 
+const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body1,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    maxHeight: 93,
+    lineHeight: '60px',
+  }));
+
 const PartnerPaper = () => {
     return(
-        <Paper sx={{backgroundColor:"#82368C", border:"1px solid rgba(255,255,255,0.5)", color:"white"}}>
-            <Typography align='center'>Partner</Typography>
-        </Paper>
+        <Item sx={{backgroundColor:"#82368C", border:"1px solid rgba(255,255,255,0.5)", color:"white",minWidth:"180px",maxWidth:"210px"}}>
+                Partner
+        </Item>
     );
 }
 
@@ -96,40 +55,51 @@ const Footer = () => {
       <footer>
         <Box padding={2} bgcolor="primary.main" color="white">
             <Grid container direction="row">
-            <Grid item xs={0} md={2}></Grid>
-            <Grid item container xs={12} md={8} direction="row" spacing={3}>
-            <Grid item>
-                <PartnerPaper/>
-            </Grid>
-            <Grid item>
-                <PartnerPaper/>
-            </Grid>
-            <Grid item>
-                <PartnerPaper/>
-            </Grid>
-            <Grid item>
-                <PartnerPaper/>
-            </Grid>
-            <Grid item>
-                <PartnerPaper/>
-            </Grid>
-            </Grid>
-            <Grid item xs={0} md={2}></Grid>
+                <Grid item xs={0} md={1.25}></Grid>
+                <Grid item container xs={12} md={9.5} direction="row" justifyContent="space-between" spacing={1}>
+                    <Grid item>
+                        <PartnerPaper/>
+                    </Grid>
+                    <Grid item>
+                        <PartnerPaper/>
+                    </Grid>
+                    <Grid item>
+                        <PartnerPaper/>
+                    </Grid>
+                    <Grid item>
+                        <PartnerPaper/>
+                    </Grid>
+                    <Grid item>
+                        <PartnerPaper/>
+                    </Grid>
+                    {/* <PartnerPaper/>
+                    <PartnerPaper/>
+                    <PartnerPaper/>
+                    <PartnerPaper/>
+                    <PartnerPaper/>
+                    <PartnerPaper/> */}
+                </Grid>
+                <Grid item xs={0} md={1.25}></Grid>
             </Grid>
         </Box>
         <Box bgcolor="primary.main" color="white" sx={{backgroundImage:`url(${backgroundImg})`, backgroundSize:"cover"}}>
             <Grid container direction="row">
-              <Grid item xs={0} md={2}></Grid>
-              <Grid item container xs={12} md={8} direction="row" spacing={5} sx={{paddingY:5}}>
+              <Grid item xs={0} md={1.25}></Grid>
+              <Grid item container xs={12} md={9.5} direction="row" spacing={5} sx={{paddingY:5}}>
                   <Grid item container>
                     <Grid item xs={12} md={6}>
                         <Stack direction="column" spacing={1}>
                         <WhiteTypography fontWeight="bold">Keep in touch</WhiteTypography>
                         <WhiteTypography paddingBottom={1} variant="body2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</WhiteTypography>
-                        <Stack direction="row" spacing={1}>
-                            <CustomInput placeholder='Your email address' aria-label="email address"/>
-                            <Button fullWidth disableRipple sx={{backgroundColor:"white", color:"black", '&:hover':{backgroundColor:"white", color:"black"}}} variant="contained">Sign up</Button>
-                        </Stack>
+                        <Grid container direction="row" spacing={1}>
+                            {/* <CustomInput placeholder='Your email address' aria-label="email address"/> */}
+                            <Grid item xs={9} sx={{'&.MuiGrid-item':{paddingLeft:0}}}>
+                            <TextField sx={{ input: { backgroundColor:"white", borderRadius:1 } }} placeholder="Your email address" fullWidth size='small'></TextField>
+                            </Grid>
+                            <Grid item xs={3}>
+                            <Button fullWidth sx={{backgroundColor:"white", height:"100%", color:"black", '&:hover':{backgroundColor:"white", color:"black"}}} variant="contained" disableRipple>Sign up</Button>
+                            </Grid>
+                        </Grid>
                         </Stack>
                     </Grid>
                     <Grid item container xs={12} md={6} alignItems="flex-end" justifyContent="flex-end">
@@ -180,7 +150,7 @@ const Footer = () => {
                       </Grid>
                   </Grid>
               </Grid>
-              <Grid item xs={0} md={2}></Grid>
+              <Grid item xs={0} md={1.25}></Grid>
           </Grid>
         </Box>
       </footer>

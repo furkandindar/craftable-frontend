@@ -7,6 +7,9 @@ export const CustomTextFieldStyled = styled(TextField)<TextFieldProps>(({theme})
   '& fieldset':{
     borderRadius:25,
   },
+  input: {
+    borderRadius:25,
+  }
 })
 );
 

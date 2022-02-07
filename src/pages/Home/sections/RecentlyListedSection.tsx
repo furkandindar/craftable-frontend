@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import MiniNftCard from '../../../components/MiniNftCard';
 import Carousel from 'react-elastic-carousel';
-import { arrayBuffer } from 'stream/consumers';
 
 const RecentlyListedSection = () => {
   return (
@@ -12,7 +11,7 @@ const RecentlyListedSection = () => {
             <Typography align='center' variant='h5' sx={{fontWeight:"bold"}}>Recently Listed</Typography>
           </Grid>
           <Grid item xs={12}>
-              <Carousel isRTL={false} itemsToShow={5} itemsToScroll={5}>
+              <Carousel isRTL={false} itemsToShow={6} itemsToScroll={2}>
                   <MiniNftCard/>
                   <MiniNftCard/>
                   <MiniNftCard/>

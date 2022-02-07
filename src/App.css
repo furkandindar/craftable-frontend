@@ -29,21 +29,21 @@ input[type=number] {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #BF3755;
+  color: #82368C;
 }
 .rec.rec-arrow:hover:enabled {
   border-radius: 50%;
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #BF3755;
+  color: #82368C;
 }
 .rec.rec-arrow:enabled {
   border-radius: 50%;
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #BF3755;
+  color: #82368C;
 }
 
 .rec.rec-arrow:focus {
@@ -51,7 +51,7 @@ input[type=number] {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #BF3755;
+  color: #82368C;
 }
 
 .rec.rec-arrow:focus:enabled {
@@ -59,7 +59,7 @@ input[type=number] {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  color: #BF3755;
+  color: #82368C;
 }
 /* hide disabled buttons */
 /* .rec.rec-arrow:disabled {
@@ -77,15 +77,15 @@ input[type=number] {
   width: 2rem;
   height: 0.15rem;
   border-radius: 25%;
-  background-color: #000000;
+  background-color: #8b8b8b;
   box-shadow: none;
 }
 
 .rec.rec-dot.rec-dot_active {
-  background-color: #BF3755;
+  background-color: #82368C;
   box-shadow: none;
 }
 
 .rec.rec-slider-container{
-  margin: 0;
+  margin: 5;
 }

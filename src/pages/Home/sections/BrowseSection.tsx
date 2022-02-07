@@ -12,6 +12,7 @@ import tradingCardsImg from "../../../assets/tradingCardsImg.png";
 import musicImg from "../../../assets/musicImg.png";
 import photographyImg from "../../../assets/photographyImg.png";
 import sportsImg from "../../../assets/sportsImg.png";
+import { CustomButtonPrimary } from '../../../components/CustomButtons';
 
 interface CategoryCardProps {
     categoryName: string;
@@ -63,7 +64,9 @@ const BrowseSection = () => {
             </Grid>
         </Grid>
         <Grid item container justifyContent="center">
-            <Button disableRipple variant="contained">Explore More</Button>
+            <Grid item xs={2}>
+                <CustomButtonPrimary fullWidth disableRipple>Explore More</CustomButtonPrimary>
+            </Grid>
         </Grid>
     </Grid>
   );

@@ -98,7 +98,7 @@ const NftCard = () => {
               </WhiteTypography>
             </Grid>
             <Grid item container justifyContent="center" xs={12}>
-              <NftIcon sx={{width:"50px",height:"50px"}}/>
+              <NftIcon sx={{width:"50px",height:"50px", color:"#ffffff"}}/>
             </Grid>
           </Grid>
         </CardContent>

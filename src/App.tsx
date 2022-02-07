@@ -1,11 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import "./App.css";
-import { Typography, Grid, Button, Paper, Switch, Box} from '@mui/material';
+import { Typography, Grid, Button, Paper, Switch, Box, Container} from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar, { ColorModeContext } from './components/NavBar';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer';
 import backgroundImg from "./assets/backgroundImg.png"
+import MarketPlace from './pages/MarketPlace/MarketPlace';
+import NftDetail from './pages/NftDetail/NftDetail';
 
 //const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -29,10 +31,13 @@ const App = () => {
             secondary: "#82368C"
           },
           primary: {
-            main: "#82368C"
+            main: "#82368C",
+            dark: "#5D2664",
           },
           secondary: {
-            main: "#E3E3E3"
+            main: "#E3E3E3",
+            dark: "#AFAFAF",
+            light: "#707070"
           }
         },
         typography: {
@@ -79,12 +84,16 @@ const App = () => {
             <Grid item xs={12}>
               <NavBar/>
             </Grid>
-            <Grid item container xs={12}>
-              <Grid item xs={0} md={1.25}></Grid>
-              <Grid item xs={12} md={9.5}>
-                <Home/>
+            <Grid item container xs={12} sx={{backgroundColor:"#f9f9f9"}}>
+              <Grid item xs={1.25}></Grid>
+              <Grid item xs={9.5}>
+                <Container maxWidth="xl">
+                  {/* <Home/> */}
+                  {/* <MarketPlace/> */}
+                  <NftDetail/>
+                </Container>
               </Grid>
-              <Grid item xs={0} md={1.25}></Grid>
+              <Grid item xs={1.25}></Grid>
             </Grid>
             <Grid item xs={12}>
               <Footer/>
