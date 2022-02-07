@@ -16,21 +16,21 @@ const Layout: React.FC<LayoutCompProps> = (props) => {
     return (
         <ThemeProvider theme={theme}>
             <Paper square>
-                <Grid container direction="column" spacing={8}>
+                <Grid container direction="column" spacing={3}>
                     <Grid item xs={12}>
                         <NavBar />
                     </Grid>
                     <Grid item container xs={12}>
-                        <Grid item xs={0} md={1.25}></Grid>
-                        <Grid item xs={12} md={9.5} container>
-                            <Grid item >
+                        <Grid item xs={1.25}></Grid>
+                        <Grid item xs={9.5} container direction="column" spacing={3}>
+                            <Grid item>
                                 <UcBreadcrumbs></UcBreadcrumbs>
                             </Grid>
-                            <Grid item >
+                            <Grid item>
                                 {childComponent}
                             </Grid>
                         </Grid>
-                        <Grid item xs={0} md={1.25}></Grid>
+                        <Grid item xs={1.25}></Grid>
                     </Grid>
                     <Grid item xs={12}>
                         <Footer />

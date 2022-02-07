@@ -6,7 +6,7 @@ import PriceTableSection from './sections/PriceTableSection';
 
 const NftDetail = () => {
   return (
-    <Grid container>
+    <Grid container spacing={3}>
     <Grid item xs={12}>
         <NftDetailSection></NftDetailSection>
     </Grid>

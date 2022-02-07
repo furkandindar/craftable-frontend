@@ -85,6 +85,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout childComponent={<Home></Home>} theme={theme} />}/>
           <Route path="/Bond" element={<Layout childComponent={<Bond></Bond>} theme={theme} />} />
+          <Route path="/nftDetail" element={<Layout childComponent={<MarketPlace/>} theme={theme}/>}/>
         </Routes>
       </BrowserRouter>
     </ColorModeContext.Provider>

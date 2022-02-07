@@ -4,9 +4,12 @@ import React from 'react';
 
 const PriceTableSection = () => {
   return (
-      <Grid container>
+      <Grid container direction="column" spacing={5}>
           <Grid item>
-              <Typography>price table</Typography>
+              <Typography align='center' variant="h5">Price Table</Typography>
+          </Grid>
+          <Grid item>
+          <Typography variant="h5">Price Table</Typography>
           </Grid>
       </Grid>
   );

@@ -4,20 +4,24 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { CustomButtonPrimary, CustomButtonSecondary } from '../../../components/CustomButtons';
 import { AvaxIcon } from '../../../assets/icons';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const NftDetailSection = () => {
   return (
-    <Grid container spacing={3}>
-        <Grid item container sx={{justifyContent:{xs:"center", lg:"flex-start"}}} xs={12} lg={5}>
+    <Grid container>
+        <Grid item container sx={{justifyContent:{xs:"center", lg:"flex-start"}}} xs={12} lg={4.5}>
             <Box 
             component="img"
             alt="nft"
             sx={{
-                maxWidth:{xs:"350px", xl:"565px"},
-                maxHeight:{xs:"350px", xl:"565px"}}}
+                maxWidth:{xs:"400px", xl:"565px"},
+                maxHeight:{xs:"400px", xl:"565px"}}}
             src={require("../../../assets/mainCardPlaceholder.jpeg")}/>
         </Grid>
-        <Grid item xs={12} lg={7} container direction="column" spacing={3}>
+        <Grid item xs={12} lg={7.5} container direction="column" spacing={3}>
             <Grid item>
                 <Stack sx={{marginTop:2}}>
                     <Typography gutterBottom variant='body2'>Username</Typography>
@@ -62,6 +66,74 @@ const NftDetailSection = () => {
                         </Grid>
                     </Grid>
                 </Paper>
+                <Box marginY={2}>
+                <Accordion sx={{paddingY:1}} defaultExpanded>
+                    <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="description-content"
+                    id="description-header"
+                    >
+                    <Typography>Description</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                    <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                </Box>
+                <Box marginY={2}>
+                <Accordion sx={{paddingY:1}}>
+                    <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="exchange-history-content"
+                    id="exchange-history-header"
+                    >
+                    <Typography>Exchange History</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                    <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                </Box>
+                <Box marginY={2}>
+                <Accordion sx={{paddingY:1}}>
+                    <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="price-history-content"
+                    id="price-history-header"
+                    >
+                    <Typography>Price History</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                    <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                </Box>
+                <Box marginY={2}>
+                <Accordion sx={{paddingY:1}}>
+                    <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="about-content"
+                    id="about-header"
+                    >
+                    <Typography>About Redacted Club</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                    <Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    </Typography>
+                    </AccordionDetails>
+                </Accordion>
+                </Box>
             </Grid>
         </Grid>
     </Grid>
