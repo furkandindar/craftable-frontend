@@ -15,7 +15,6 @@ import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import backgroundImg from "../assets/footer_bg.png";
 import Paper from '@mui/material/Paper';
-import CustomTextField from './CustomTextField';
 import CustomButton from './CustomButton';
 
 const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
