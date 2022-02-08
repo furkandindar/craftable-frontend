@@ -7,12 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Chip from '@mui/material/Chip';
 import ClearIcon from '@mui/icons-material/Clear';
 import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import CustomSortButton, { SortType } from '../../../components/CustomSortButton';
 
-interface SortType {
-    label: string;
-    value: number;
-}
 
 interface ChipData {
     key: number;
@@ -28,10 +24,6 @@ const sortItems: SortType[] = [
     {label:"Highest sale", value:6},
 ];
 
-const ListItem = styled('div')(({ theme }) => ({
-    margin: theme.spacing(0.5),
-  }));
-
 const SortSection = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -44,6 +36,10 @@ const SortSection = () => {
     if(event.target.innerText){
         setSelectedItem(event.target.innerText);
     }
+  };
+
+  const handleOnSortChange = (value:any) => {
+      console.log(value);
   };
 
   const [chipData, setChipData] = React.useState<readonly ChipData[]>([
@@ -74,43 +70,7 @@ const SortSection = () => {
                     ))}
           </Grid>
           <Grid item xs={3}>
-              <CustomButtonPrimary
-              id="sort-button"
-              aria-controls={open ? 'sort-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick} 
-              disableRipple fullWidth endIcon={<ExpandMoreIcon/>}
-              >{selectedItem}</CustomButtonPrimary>
-              <Menu
-                sx={{
-                    '& .MuiPaper-root':{
-                        backgroundColor:"primary.main",
-                        color: 'white',
-                    },
-                    '& .MuiMenuItem-root':{
-                    borderBottom: "1px solid white",
-                    justifyContent: "center"
-                    },
-                    '& .MuiMenuItem-root:last-child':{
-                        borderBottom: 'none'
-                    },
-                    '& .MuiList-root': {
-                        padding: 0,
-                    }
-                }}
-                    id="sort-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                    'aria-labelledby': 'sort-button',
-                    }}
-                >
-                    {sortItems.map((item) => (
-                        <MenuItem key={item.value} value={item.value} onClick={handleClose}>{item.label}</MenuItem>
-                    ))}
-                </Menu>
+                <CustomSortButton onChange={handleOnSortChange} sortItems={sortItems}></CustomSortButton>
           </Grid>
       </Grid>
   );
