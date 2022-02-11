@@ -97,10 +97,11 @@ const Footer = () => {
                         <Stack direction="column" spacing={1}>
                         <WhiteTypography sx={{textAlign:{xs:"center", md:"left"}}} fontWeight="bold">Keep in touch</WhiteTypography>
                         <WhiteTypography sx={{textAlign:{xs:"center", md:"left"}}} paddingBottom={1} variant="body2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</WhiteTypography>
-                        <Grid container direction="row" spacing={1}>
-                            <Grid item xs={9} sx={{'&.MuiGrid-item':{paddingLeft:0}}}>
+                        <Grid container direction="row">
+                            <Grid item xs={8.5}>
                             <TextField sx={{ input: { backgroundColor:"white", borderRadius:1 } }} placeholder="Your email address" fullWidth size='small'></TextField>
                             </Grid>
+                            <Grid item xs={0.5}></Grid>
                             <Grid item xs={3}>
                             <Button fullWidth sx={{backgroundColor:"white", height:"100%", color:"black", '&:hover':{backgroundColor:"white", color:"black"}}} variant="contained" disableRipple>Sign up</Button>
                             </Grid>
