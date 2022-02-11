@@ -39,6 +39,14 @@ const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     disableRipple fullWidth endIcon={<ExpandMoreIcon/>}
     >{selectedItem}</CustomButtonPrimary>
     <Menu
+    anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'center',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
       sx={{
           '& .MuiPaper-root':{
               backgroundColor:"primary.main",

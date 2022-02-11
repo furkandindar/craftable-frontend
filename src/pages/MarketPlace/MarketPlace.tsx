@@ -16,7 +16,7 @@ const MarketPlace = () => {
               </Grid>
           </Grid>
           <Grid item container xs={12} md={9} direction="column">
-              <Grid item>
+              <Grid item container>
                 <SortSection/>
               </Grid>
               <Grid item container justifyContent="center">

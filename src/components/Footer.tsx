@@ -1,22 +1,20 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import React from 'react';
 import {styled} from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField'
-import InputUnstyled, { InputUnstyledProps } from '@mui/base/InputUnstyled';
 import Button from '@mui/material/Button';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import backgroundImg from "../assets/footer_bg.png";
 import Paper from '@mui/material/Paper';
-import CustomTextField from './CustomTextField';
-import CustomButton from './CustomButton';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 
 const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
 const otherLinks = ['My Dashboard',"NFT's","New"];
@@ -51,9 +49,22 @@ const PartnerPaper = () => {
 }
 
 const Footer = () => {
+    const location = useLocation();
+    console.log(location.pathname);
+    const [isHomePage, setIsHomePage] = useState(false);
+    useEffect(() => {
+        if(location.pathname === "/"){
+            setIsHomePage(true);
+        }else{
+            setIsHomePage(false);
+        }
+    }, [isHomePage]);
+    
+    console.log(isHomePage);
   return (
       <footer>
-        <Box padding={2} bgcolor="primary.main" color="white">
+        {isHomePage ? <>
+            <Box padding={2} bgcolor="primary.main" color="white">
             <Grid container direction="row">
                 <Grid item xs={0} md={1.25}></Grid>
                 <Grid item container xs={12} md={9.5} direction="row" justifyContent="space-between" spacing={1}>
@@ -72,12 +83,6 @@ const Footer = () => {
                     <Grid item>
                         <PartnerPaper/>
                     </Grid>
-                    {/* <PartnerPaper/>
-                    <PartnerPaper/>
-                    <PartnerPaper/>
-                    <PartnerPaper/>
-                    <PartnerPaper/>
-                    <PartnerPaper/> */}
                 </Grid>
                 <Grid item xs={0} md={1.25}></Grid>
             </Grid>
@@ -152,7 +157,7 @@ const Footer = () => {
               </Grid>
               <Grid item xs={0} md={1.25}></Grid>
           </Grid>
-        </Box>
+        </Box></> : null}
       </footer>
   );
 };
