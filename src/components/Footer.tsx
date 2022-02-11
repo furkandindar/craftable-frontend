@@ -15,6 +15,7 @@ import Paper from '@mui/material/Paper';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import CustomButton from './CustomButton';
 
 const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
 const otherLinks = ['My Dashboard',"NFT's","New"];
