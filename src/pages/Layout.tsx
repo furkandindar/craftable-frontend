@@ -17,10 +17,10 @@ const Layout: React.FC<LayoutCompProps> = (props) => {
         <ThemeProvider theme={theme}>
             <Paper square>
                 <Grid container direction="column" spacing={3}>
-                    <Grid item xs={12}>
+                    <Grid item>
                         <NavBar />
                     </Grid>
-                    <Grid item container xs={12}>
+                    <Grid item container>
                         <Grid item xs={1.25}></Grid>
                         <Grid item xs={9.5} container direction="column" spacing={3}>
                             <Grid item>
@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutCompProps> = (props) => {
                         </Grid>
                         <Grid item xs={1.25}></Grid>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item>
                         <Footer />
                     </Grid>
                 </Grid>
