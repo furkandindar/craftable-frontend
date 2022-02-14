@@ -51,7 +51,6 @@ const PartnerPaper = () => {
 
 const Footer = () => {
     const location = useLocation();
-    console.log(location.pathname);
     const [isHomePage, setIsHomePage] = useState(false);
     useEffect(() => {
         if(location.pathname === "/"){
@@ -61,7 +60,6 @@ const Footer = () => {
         }
     }, [isHomePage]);
     
-    console.log(isHomePage);
   return (
       <footer>
         {isHomePage ? <>
@@ -132,21 +130,21 @@ const Footer = () => {
                           <Grid item xs={12} md={4}>
                               <Stack direction="column" spacing={3} sx={{padding:{xs:3,md:0}}}>
                                   {siteLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                               </Stack>
                           </Grid>
                           <Grid item xs={12} md={4}>
                                 <Stack direction="column" spacing={3} sx={{padding:{xs:3,md:0}}}>
                                   {otherLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                                 </Stack>
                           </Grid>
                           <Grid item xs={12} md={4} sx={{padding:{xs:3,md:0}}}>
                                 <Stack direction="column" spacing={3}>
                                   {helpLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                                 </Stack>
                           </Grid>
@@ -177,21 +175,21 @@ const Footer = () => {
                           <Grid item container xs={12} md={4} sx={{padding:{xs:3,md:0}}}>
                               <Stack direction="column" spacing={3}>
                                   {siteLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                               </Stack>
                           </Grid>
                           <Grid item container xs={12} md={4} sx={{padding:{xs:3,md:0}}}>
                                 <Stack direction="column" spacing={3}>
                                   {otherLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                                 </Stack>
                           </Grid>
                           <Grid item container xs={12} md={4} sx={{padding:{xs:3,md:0}}}>
                                 <Stack direction="column" spacing={3}>
                                   {helpLinks.map((link) => (
-                                      <CustomLink underline='none'>{link}</CustomLink>
+                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
                                   ))}
                                 </Stack>
                           </Grid>

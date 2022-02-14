@@ -256,12 +256,12 @@ function NavBar() {
            <Stack spacing={3} direction="row">
              {isLoggedIn ? <>
               {routexx.map((route, index) => (
-                   <MenuItem component={Link} to={route.path}><Typography textAlign="center">{route.navText}</Typography></MenuItem>
+                   <MenuItem key={route.navText} component={Link} to={route.path}><Typography textAlign="center">{route.navText}</Typography></MenuItem>
                ))}
                </> : <>
                {routexx.map((route, index) => (
                  index < 2 ?
-                   <MenuItem component={Link} to={route.path}><Typography textAlign="center">{route.navText}</Typography></MenuItem> : null
+                   <MenuItem key={route.navText} component={Link} to={route.path}><Typography textAlign="center">{route.navText}</Typography></MenuItem> : null
                ))}
              </>}
            </Stack>
