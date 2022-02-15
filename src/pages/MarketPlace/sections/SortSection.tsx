@@ -7,12 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import Chip from '@mui/material/Chip';
 import ClearIcon from '@mui/icons-material/Clear';
 import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import CustomSortButton, { SortType } from '../../../components/CustomSortButton';
 
-interface SortType {
-    label: string;
-    value: number;
-}
 
 interface ChipData {
     key: number;
@@ -23,14 +19,10 @@ const sortItems: SortType[] = [
     {label:"Recently Listed", value:1},
     {label:"Recently Minted", value:2},
     {label:"Recently Sold", value:3},
-    {label:"Price Low", value:4},
-    {label:"Price High", value:5},
+    {label:"Price (Lowest to highest)", value:4},
+    {label:"Price (Highest to lowest)", value:5},
     {label:"Highest sale", value:6},
 ];
-
-const ListItem = styled('div')(({ theme }) => ({
-    margin: theme.spacing(0.5),
-  }));
 
 const SortSection = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -44,6 +36,10 @@ const SortSection = () => {
     if(event.target.innerText){
         setSelectedItem(event.target.innerText);
     }
+  };
+
+  const handleOnSortChange = (value:any) => {
+      console.log(value);
   };
 
   const [chipData, setChipData] = React.useState<readonly ChipData[]>([
@@ -67,50 +63,14 @@ const SortSection = () => {
     setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
   };
   return (
-      <Grid container direction="row" justifyContent="space-between">
-          <Grid item xs={9}>
+      <Grid container direction="row" sx={{justifyContent:{xs:"center", md:"space-between"}}} spacing={3} marginBottom={3}>
+          <Grid item xs={12} md={8.5}>
                 {chipData.map((data) => (
-                            <Chip sx={{margin:0.5, backgroundColor:"white", boxShadow: '0px 1px 0px 0px rgba(0,0,0,0.25)'}} deleteIcon={<ClearIcon/>} onDelete={handleDelete(data)} label={data.label}/>
+                            <Chip sx={{margin:0.5, backgroundColor:"white", boxShadow: '1px 1px 1px 1px rgba(0,0,0,0.25)'}} deleteIcon={<ClearIcon/>} onDelete={handleDelete(data)} label={data.label}/>
                     ))}
           </Grid>
-          <Grid item xs={3}>
-              <CustomButtonPrimary
-              id="sort-button"
-              aria-controls={open ? 'sort-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick} 
-              disableRipple fullWidth endIcon={<ExpandMoreIcon/>}
-              >{selectedItem}</CustomButtonPrimary>
-              <Menu
-                sx={{
-                    '& .MuiPaper-root':{
-                        backgroundColor:"primary.main",
-                        color: 'white',
-                    },
-                    '& .MuiMenuItem-root':{
-                    borderBottom: "1px solid white",
-                    justifyContent: "center"
-                    },
-                    '& .MuiMenuItem-root:last-child':{
-                        borderBottom: 'none'
-                    },
-                    '& .MuiList-root': {
-                        padding: 0,
-                    }
-                }}
-                    id="sort-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                    'aria-labelledby': 'sort-button',
-                    }}
-                >
-                    {sortItems.map((item) => (
-                        <MenuItem key={item.value} value={item.value} onClick={handleClose}>{item.label}</MenuItem>
-                    ))}
-                </Menu>
+          <Grid item xs={7} md={3.5}>
+                <CustomSortButton onChange={handleOnSortChange} sortItems={sortItems}></CustomSortButton>
           </Grid>
       </Grid>
   );
