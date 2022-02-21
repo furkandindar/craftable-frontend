@@ -7,10 +7,17 @@ import { CardActionArea } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedNftCard = () => {
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    console.log('clicked');
+    navigate("/marketplace/nftId");
+  }
   return (
-    <Card sx={{ '&:hover':{boxShadow: '0px 0px 9px 1px rgba(43,43,43,0.74)'} }}>
+    <Card sx={{ '&:hover':{boxShadow: '0px 0px 9px 1px rgba(43,43,43,0.74)'} }} onClick={handleClick}>
     <CardActionArea disableRipple>
       <CardMedia
         component="img"
