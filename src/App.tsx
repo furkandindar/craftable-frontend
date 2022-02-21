@@ -13,6 +13,7 @@ import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
 import CreateChest from './pages/CreateChest/CreateChest';
 import CreateNft from './pages/CreateNft/CreateNft';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 //const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -91,6 +92,7 @@ const App = () => {
           <Route path="/marketplace" element={<Layout childComponent={<MarketPlace/>} theme={theme}/>}/>
           <Route path="/createchest" element={<Layout childComponent={<CreateChest></CreateChest>} theme={theme} />} />
           <Route path="/createnft" element={<Layout childComponent={<CreateNft></CreateNft>} theme={theme} />} />
+          <Route path="/dashboard" element={<Layout childComponent={<Dashboard/>} theme={theme} />} />
           <Route
             path="*"
             element={
