@@ -2,19 +2,27 @@ import React from 'react';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
+import Typography, { TypographyProps } from '@mui/material/Typography';
 import styled from '@emotion/styled';
 import Stack from '@mui/material/Stack';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Button } from '@mui/material';
 
-const CustomLink = styled(Typography)({
-    cursor: "pointer",
-    '&:hover':{
-        color: '#BF3755',
-        //fontWeight: "bold",
+const CustomLink = styled(Typography)<TypographyProps>(({theme}) => ({
+  cursor: "pointer",
+    '&:hover': {
+        color: "#82368C",
+        fontWeight: "bold",
     },
-});
+}));
+
+// (({theme}) => ({
+//   cursor: "pointer",
+//     '&:hover': {
+//         color: theme.palette.primary,
+//         //fontWeight: "bold",
+//     },
+// }));
 
 const ExploreMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -41,7 +49,7 @@ const ExploreMenu = () => {
         <Menu
           sx={{
               '& .MuiPaper-root':{
-                  backgroundColor:"#BF3755",
+                  backgroundColor:"#82368C",
                   color: 'white',
               },
               '& .MuiMenuItem-root':{
@@ -63,7 +71,7 @@ const ExploreMenu = () => {
             onMouseLeave: handleClose
           }}
         >
-          <MenuItem onClick={handleClose}>NFT's</MenuItem>
+          <MenuItem onClick={handleClose}>Marketplace</MenuItem>
           <MenuItem onClick={handleClose}>New</MenuItem>
         </Menu>
         </>
@@ -137,7 +145,7 @@ const MenuItems = ({isLoggedIn}:MenuItemProps) => {
     return (
       <Stack direction="row" spacing={4}>
           <ExploreMenu/>
-          <CompanyMenu/>
+          <CustomLink>Earn</CustomLink>
           {isLoggedIn ? 
           <>
           <CustomLink>Bond</CustomLink>

@@ -91,6 +91,14 @@ const App = () => {
           <Route path="/marketplace" element={<Layout childComponent={<MarketPlace/>} theme={theme}/>}/>
           <Route path="/createchest" element={<Layout childComponent={<CreateChest></CreateChest>} theme={theme} />} />
           <Route path="/createnft" element={<Layout childComponent={<CreateNft></CreateNft>} theme={theme} />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </ColorModeContext.Provider>
