@@ -50,32 +50,32 @@ const CreateNft= () => {
                 <Paper sx={{ padding: 4 }}>
                     <Stack spacing={1}>
                         <Typography variant='h6'>Description</Typography>
-                        <Grid container justifyContent={"center"} direction="row" spacing={2}>
-                            <Grid item xs={1.3}>
+                        <Grid container justifyContent={"space-between"} direction="row" spacing={2}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Art" control={<Radio />} label="Art" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Collectibles" control={<Radio />} label="Collectibles" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Games" control={<Radio />} label="Games" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Music" control={<Radio />} label="Music" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="NSFW" control={<Radio />} label="NSFW" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Sports" control={<Radio />} label="Sports" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Tranding Cards" control={<Radio />} label="Tranding Cards" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Utility" control={<Radio />} label="Utility" />
                             </Grid>
-                            <Grid item xs={1.3}>
+                            <Grid item xs={1}>
                                 <FormControlLabel value="Video" control={<Radio />} label="Video" />
                             </Grid>
                         </Grid>

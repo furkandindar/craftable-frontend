@@ -58,7 +58,7 @@ const Footer = () => {
         }else{
             setIsHomePage(false);
         }
-    }, [isHomePage]);
+    }, [location]);
     
   return (
       <footer>

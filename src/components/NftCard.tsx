@@ -12,27 +12,35 @@ import { AvaxIcon } from '../assets/icons';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import Box from '@mui/system/Box';
+import { getNfts } from '../shared/fakeData';
+import { useNavigate } from 'react-router-dom';
 
 const NftCard = () => {
     const [bookmarked, setBookmarked] = useState(false);
     const [bookmarkCount, setBookmarkCount] = useState(2);
+    let nfts = getNfts();
+    let navigate = useNavigate();
 
     const handleBookmarkClick = () => {
         setBookmarked(!bookmarked);
         bookmarked ? setBookmarkCount(bookmarkCount-1) : setBookmarkCount(bookmarkCount+1);
         console.log(bookmarked);
     }
+
+    const handleCardClick = () => {
+        navigate(`/marketplace/${nfts[0].nftId}`)
+    }
   return (
-    <Card sx={{ maxWidth: 345, "&:hover":{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px"}}}>
+    <Card sx={{ maxWidth: 345, "&:hover":{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px"}}} onClick={handleCardClick}>
         <CardMedia
         component="img"
-        image={require("../assets/mainCardPlaceholder.jpeg")}
-        alt="nft"
+        image={nfts[0].nftImage}
+        alt={nfts[0].nftId}
         />
         <CardContent sx={{padding:"0.875rem"}}>
             <Grid container>
                 <Grid item xs={12}>
-                    <Typography gutterBottom>Username</Typography>
+                    <Typography gutterBottom>{nfts[0].nftId}</Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <Divider />
@@ -44,15 +52,15 @@ const NftCard = () => {
                     <Stack direction="row" justifyContent="space-between" alignItems="center">
                         <Stack direction="row" alignItems="center" spacing={0.25}>
                             <AvaxIcon/>
-                            <Typography variant='body1' fontWeight="bold">950</Typography>
-                            <Typography variant='body2'>AVAX</Typography>
+                            <Typography variant='body1' fontWeight="bold">{nfts[0].nftCoinPrice}</Typography>
+                            <Typography variant='body2'>{nfts[0].coin}</Typography>
                         </Stack>
-                        <Typography variant='body2' color="#707070">$4075,5</Typography>
+                        <Typography variant='body2' color="#707070">${nfts[0].nftDollarPrice}</Typography>
                     </Stack>
                     <Stack direction="row" justifyContent="space-between" alignItems="center" paddingTop={4}>
                         <Stack direction="row" alignItems="center" spacing={0.25}>
                             <AvaxIcon/>
-                            <Typography variant='body2' color="#707070">Redacted</Typography>
+                            <Typography variant='body2' color="#707070">{nfts[0].collectionId}</Typography>
                         </Stack>
                         <Stack direction="row" alignItems="center" spacing={0.50}>
                         <Typography variant='body2' color="#707070">{bookmarkCount}</Typography>

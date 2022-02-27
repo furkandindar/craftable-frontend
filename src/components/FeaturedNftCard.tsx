@@ -14,7 +14,7 @@ const FeaturedNftCard = () => {
 
   const handleClick = () => {
     console.log('clicked');
-    navigate("/marketplace/nftId");
+    navigate("/marketplace/1");
   }
   return (
     <Card sx={{ '&:hover':{boxShadow: '0px 0px 9px 1px rgba(43,43,43,0.74)'} }} onClick={handleClick}>
