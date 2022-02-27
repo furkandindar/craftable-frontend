@@ -9,6 +9,13 @@ import DashboardTab from './sections/DashboardTab';
 import LikesTab from './sections/LikesTab';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const StyledTabs = styled(TabList)({
+    '& .MuiTabs-indicator': {
+        backgroundColor: 'primary.main',
+    },
+})
 
 const Dashboard = () => {
     const [value, setValue] = React.useState('dashboard');
@@ -32,11 +39,11 @@ const Dashboard = () => {
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box>
-                    <TabList onChange={handleChange} aria-label="dashboard tabs" centered>
-                        <Tab label="Dashboard" value="dashboard" disableRipple/>
-                        <Tab label="Collectibles" value="collectibles" disableRipple/>
-                        <Tab label="Likes" value="likes" disableRipple/>
-                    </TabList>
+                    <StyledTabs onChange={handleChange} aria-label="dashboard tabs" centered>
+                        <Tab sx={{color:"black"}} label="Dashboard" value="dashboard" disableRipple/>
+                        <Tab sx={{color:"black"}} label="Collectibles" value="collectibles" disableRipple/>
+                        <Tab sx={{color:"black"}} label="Likes" value="likes" disableRipple/>
+                    </StyledTabs>
                     </Box>
                     <TabPanel value="dashboard">
                         <DashboardTab/>

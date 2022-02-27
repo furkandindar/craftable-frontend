@@ -379,7 +379,7 @@ function NavBar() {
                    </Grid>
                  </Grid>
                </Box> : null}
-             {isLoggedIn ? <CustomButtonGradientToBlack disableRipple>Create</CustomButtonGradientToBlack> : <CustomButtonGradient disableRipple onClick={() => { setIsLoggedIn(!isLoggedIn) }} sx={{ minWidth: "125px" }}>Connect Wallet</CustomButtonGradient>}
+             {isLoggedIn ? <CustomButtonGradientToBlack disableRipple onClick={()=> {navigate("/create")}}>Create</CustomButtonGradientToBlack> : <CustomButtonGradient disableRipple onClick={() => { setIsLoggedIn(!isLoggedIn) }} sx={{ minWidth: "125px" }}>Connect Wallet</CustomButtonGradient>}
           </Box>
         </Toolbar>
     </AppBar>
