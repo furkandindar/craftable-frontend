@@ -16,6 +16,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import CustomButton from './CustomButton';
+import { MediumIcon, TelegramIcon } from '../assets/icons';
 
 const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
 const otherLinks = ['My Dashboard',"NFT's","New"];
@@ -108,9 +109,9 @@ const Footer = () => {
                     </Grid>
                     <Grid item container xs={12} md={6} alignItems="flex-end" sx={{justifyContent:{xs:"center", md:"flex-end"},padding:{xs:2,md:0}}}>
                         <Stack direction="row" spacing={3}>
-                            <FacebookIcon fontSize="large"/>
-                            <InstagramIcon fontSize="large"/>
                             <TwitterIcon fontSize="large"/>
+                            <TelegramIcon fontSize="large"/>
+                            <MediumIcon fontSize="large"/>
                         </Stack>
                     </Grid>
                   </Grid>
@@ -199,9 +200,9 @@ const Footer = () => {
                       </Grid>
                       <Grid item container xs={12} md={6} sx={{justifyContent:{xs:"center", md:"flex-end"}}}>
                         <Stack direction="row" spacing={3}>
-                            <FacebookIcon fontSize="large"/>
-                            <InstagramIcon fontSize="large"/>
                             <TwitterIcon fontSize="large"/>
+                            <TelegramIcon fontSize="large"/>
+                            <MediumIcon fontSize="large"/>
                         </Stack>
                     </Grid>
                   </Grid>
