@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import Bond from './pages/Bond/Bond';
+import Chest from './pages/Chest/Chest';
+import ChestDetail from './pages/ChestDetail/ChestDetail';
 import CreateChest from './pages/CreateChest/CreateChest';
 import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
 import CreateNft from './pages/CreateNft/CreateNft';
@@ -19,12 +21,14 @@ ReactDOM.render(
         <Route path="/" element={<App/>}>
           <Route index element={<Home/>}/>
           <Route path="marketplace" element={<MarketPlace/>}/>
-          <Route path="marketplace/:nftDetail" element={<NftDetail/>}></Route>
+          <Route path="marketplace/:nftId" element={<NftDetail/>}></Route>
           <Route path="dashboard" element={<Dashboard/>}/>
           <Route path='create' element={<CreateChestNft/>}/>
           <Route path='create/nft' element={<CreateNft/>}/>
           <Route path='create/chest' element={<CreateChest/>}/>
           <Route path='bond' element={<Bond/>}/>
+          <Route path='chest' element={<Chest/>}/>
+          <Route path='chest/:chestId' element={<ChestDetail/>}/>
           <Route
             path="*"
             element={

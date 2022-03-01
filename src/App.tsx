@@ -116,7 +116,7 @@ const App = () => {
                     <Grid item>
                         <NavBar />
                     </Grid>
-                    <Grid item container>
+                    <Grid item container sx={mode==="light" ? {background:"#f9f9f9"} : {background:"black"}}>
                         <Grid item xs={1.25}></Grid>
                         <Grid item xs={9.5} container direction="column" spacing={3}>
                             <Grid item>
