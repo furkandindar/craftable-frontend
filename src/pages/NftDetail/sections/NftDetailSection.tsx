@@ -11,15 +11,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const NftDetailSection = () => {
   return (
-    <Grid container>
+    <Grid container spacing={2}>
         <Grid item container sx={{justifyContent:{xs:"center", lg:"flex-start"}}} xs={12} lg={4.5}>
-            <Box 
-            component="img"
-            alt="nft"
-            sx={{
-                maxWidth:{xs:"400px", xl:"565px"},
-                maxHeight:{xs:"400px", xl:"565px"}}}
-            src={require("../../../assets/mainCardPlaceholder.jpeg")}/>
+            <Grid item>
+                <img
+                width={"100%"}
+                alt="nft"
+                src={require("../../../assets/mainCardPlaceholder.jpeg")}/>
+            </Grid>
         </Grid>
         <Grid item xs={12} lg={7.5} container direction="column" spacing={3}>
             <Grid item>
