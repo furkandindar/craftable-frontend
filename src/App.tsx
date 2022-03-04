@@ -122,7 +122,7 @@ const App = () => {
                             <Grid item>
                                 <UcBreadcrumbs></UcBreadcrumbs>
                             </Grid>
-                            <Grid item>
+                            <Grid item container>
                                 <Outlet/>
                             </Grid>
                         </Grid>

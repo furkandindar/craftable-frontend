@@ -13,25 +13,22 @@ const FeaturedChestSection = () => {
     }
   return (
     <Grid container spacing={3}>
-        <Grid item xs={12} md={7}>
-            <Paper sx={{width:"100%", height:"400px"}} onClick={handleChestClick}>
-                <Box position={"relative"}>
-                    <img width={"100%"} height={"400px"} src={require('../../../assets/chest1.png')}></img>
+        <Grid item xs={12} md={6}>
+                <Box position={"relative"} sx={{width:"100%"}} onClick={handleChestClick}>
+                    <img width={"100%"} src={require('../../../assets/chest1.png')}></img>
                     <Box position={"absolute"} sx={{top:"85%", left:"8%"}}>
                     <Typography sx={{color:"white"}} fontWeight={600} variant="h5">Chest #1</Typography>
                     </Box>
                 </Box>
-            </Paper>
+            
         </Grid>
-        <Grid item xs={12} md={5}>
-            <Paper sx={{width:"100%", height:"400px"}} onClick={handleChestClick}>
-                <Box position={"relative"}>
-                    <img width={"100%"} height={"400px"} src={require('../../../assets/chest2.png')}></img>
+        <Grid item xs={12} md={6}>
+                <Box position={"relative"} sx={{width:"100%"}} onClick={handleChestClick}>
+                    <img width={"100%"} src={require('../../../assets/chest1.png')}></img>
                     <Box position={"absolute"} sx={{top:"85%", left:"8%"}}>
                     <Typography sx={{color:"white"}} fontWeight={600} variant="h5">Chest #1</Typography>
                     </Box>
                 </Box>
-            </Paper>
         </Grid>
     </Grid>
   )
