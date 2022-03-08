@@ -9,6 +9,7 @@ import CreateChest from './pages/CreateChest/CreateChest';
 import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
 import CreateNft from './pages/CreateNft/CreateNft';
 import Dashboard from './pages/Dashboard/Dashboard';
+import DialogBase from './pages/Dialogs/DialogBase';
 import Home from './pages/Home/Home';
 import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
@@ -28,6 +29,7 @@ ReactDOM.render(
           <Route path='create/chest' element={<CreateChest/>}/>
           <Route path='bond' element={<Bond/>}/>
           <Route path='chest' element={<Chest/>}/>
+          <Route path='dialog' element={<DialogBase />}/>
           <Route path='chest/:chestId' element={<ChestDetail/>}/>
           <Route
             path="*"
