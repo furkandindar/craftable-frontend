@@ -10,6 +10,7 @@ import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
 import CreateNft from './pages/CreateNft/CreateNft';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DialogBase from './pages/Dialogs/DialogBase';
+import GovernanceDetail from './pages/GovernanceDetail/GovernanceDetail';
 import Home from './pages/Home/Home';
 import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
@@ -18,7 +19,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
+      <Routes>    
         <Route path="/" element={<App/>}>
           <Route index element={<Home/>}/>
           <Route path="marketplace" element={<MarketPlace/>}/>
@@ -31,6 +32,7 @@ ReactDOM.render(
           <Route path='chest' element={<Chest/>}/>
           <Route path='dialog' element={<DialogBase />}/>
           <Route path='chest/:chestId' element={<ChestDetail/>}/>
+          <Route path='governance/detail' element={<GovernanceDetail />}/>
           <Route
             path="*"
             element={
