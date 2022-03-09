@@ -33,7 +33,7 @@ export const ColorModeContext = React.createContext({ toggleColorMode: () => { }
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  border: "1px solid black",
+  border: "1px solid #d3d3d3",
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
@@ -52,7 +52,7 @@ const Search = styled('div')(({ theme }) => ({
 const SearchLarge = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  border: "1px solid black",
+  border: "1px solid #d3d3d3",
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
