@@ -5,6 +5,7 @@ import App from './App';
 import Bond from './pages/Bond/Bond';
 import Chest from './pages/Chest/Chest';
 import ChestDetail from './pages/ChestDetail/ChestDetail';
+import Company from './pages/Company/Company';
 import CreateChest from './pages/CreateChest/CreateChest';
 import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
 import CreateNft from './pages/CreateNft/CreateNft';
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Route path='dialog' element={<DialogBase />}/>
           <Route path='chest/:chestId' element={<ChestDetail/>}/>
           <Route path='governance/detail' element={<GovernanceDetail />}/>
+          <Route path='company' element={<Company />}/>
           <Route
             path="*"
             element={
