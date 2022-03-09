@@ -5,11 +5,14 @@ import App from './App';
 import Bond from './pages/Bond/Bond';
 import Chest from './pages/Chest/Chest';
 import ChestDetail from './pages/ChestDetail/ChestDetail';
+import CollectionProfile from './pages/CollectionProfile/CollectionProfile';
+import Craft from './pages/Craft/Craft';
 import Company from './pages/Company/Company';
 import CreateChest from './pages/CreateChest/CreateChest';
 import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
 import CreateNft from './pages/CreateNft/CreateNft';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Earn from './pages/Earn/Earn';
 import DialogBase from './pages/Dialogs/DialogBase';
 import GovernanceDetail from './pages/GovernanceDetail/GovernanceDetail';
 import Home from './pages/Home/Home';
@@ -33,6 +36,9 @@ ReactDOM.render(
           <Route path='chest' element={<Chest/>}/>
           <Route path='dialog' element={<DialogBase />}/>
           <Route path='chest/:chestId' element={<ChestDetail/>}/>
+          <Route path="craft" element={<Craft/>}/>
+          <Route path="collection/:collectionId" element={<CollectionProfile/>}/>
+          <Route path="earn" element={<Earn/>}/>
           <Route path='governance/detail' element={<GovernanceDetail />}/>
           <Route path='company' element={<Company />}/>
           <Route

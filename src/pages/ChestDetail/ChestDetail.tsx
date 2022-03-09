@@ -8,14 +8,7 @@ const ChestDetail = () => {
     <Grid container direction={"column"} spacing={0}>
         <Grid item container spacing={3} sx={{paddingBottom:5}}>
             <Grid item xs={12} md={5}>
-            <Box 
-            component="img"
-            alt="nft"
-            sx={{
-                
-                maxWidth:{xs:"300px", md:"450px", xl:"565px"},
-                maxHeight:{xs:"300px", md:"450px", xl:"565px"}}}
-            src={require("../../assets/chest-detail-img.png")}/>
+            <img width={"100%"} src={require("../../assets/chest-detail-img.png")}/>
             </Grid>
             <Grid item xs={12} md={7} container spacing={4} direction={"column"}>
                 <Grid item>

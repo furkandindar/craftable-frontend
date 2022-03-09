@@ -87,7 +87,7 @@ const Footer = () => {
                 <Grid item xs={0} md={1.25}></Grid>
             </Grid>
         </Box>
-        <Box bgcolor="primary.main" color="white" sx={{backgroundImage:`url(${backgroundImg})`, backgroundSize:"cover"}}>
+        <Box bgcolor="primary.main" color="white">
             <Grid container direction="row">
               <Grid item xs={0} md={1.25}></Grid>
               <Grid item container xs={12} md={9.5} direction="row" spacing={5} sx={{paddingY:5}}>
@@ -159,7 +159,7 @@ const Footer = () => {
           </Grid>
         </Box></> : 
         <>
-            <Box bgcolor="primary.main" color="white" sx={{backgroundImage:`url(${backgroundImg})`, backgroundSize:"cover"}}>
+            <Box bgcolor="primary.main" color="white">
             <Grid container direction="row">
               <Grid item xs={0} md={1.25}></Grid>
               <Grid item container xs={12} md={9.5} direction="row" spacing={5} sx={{paddingY:5}}>
