@@ -1,7 +1,8 @@
 import { Dialog, Paper, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { AvaxIcon } from '../../../assets/icons';
-import { CustomButtonPurple, CustomButtonWhite } from '../../../components/CustomButtons';
+import { CustomButtonPurple, CustomButtonSecondary, CustomButtonWhite } from '../../../components/CustomButtons';
+import CustomImageHolder from '../../../components/CustomImageHolder';
 import CustomTextField from '../../../components/CustomTextField';
 
 export interface ConfirmDepositProps {
@@ -26,20 +27,22 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
         <Paper
           sx={{
             padding: 4,
-            background: "#82368c", color: "white", '& .MuiMenuItem-root': {
-              borderBottom: "1px solid white",
-            },
-            '& .MuiMenuItem-root:last-child': {
-              borderBottom: 'none'
-            },
+            backgroundColor: "primary.main", color: "white",
             width: 600
           }}>
           <Stack spacing={4} alignItems={"center"}>
-            <Typography variant='h6'>Confirm Deposit
-              <AvaxIcon sx={{ fontSize: 33, marginLeft: 1, marginRight: 1 }} />
-              USDT.e
-            </Typography>
-            <CustomTextField InputProps={{ endAdornment: <CustomButtonPurple sx={{ height: 40 }}>MAX</CustomButtonPurple>, sx: { height: 60, background: "white" } }} type={"number"} placeholder={"0.00"}></CustomTextField>
+            <Grid container justifyContent={"center"} alignItems="center" spacing={1}>
+              <Grid item>
+                <Typography variant='h6'>Confirm Deposit</Typography>
+              </Grid>
+              <Grid item>
+                <CustomImageHolder width={30} height={30} imgUrl={'https://miro.medium.com/max/1000/1*RK1R9BV_5-_2yXLWjuP-qw.png'} alt={'token'}></CustomImageHolder>
+              </Grid>
+              <Grid item>
+                <Typography variant='h6'>USDT.e</Typography>
+              </Grid>
+            </Grid>
+            <CustomTextField InputProps={{ endAdornment: <CustomButtonSecondary disableRipple>MAX</CustomButtonSecondary>, sx: { height: 60, background: "white", borderRadius:25} }} type={"number"} placeholder={"0.00"}></CustomTextField>
             <Grid container justifyContent={"center"} direction="row" spacing={2}>
               <Grid item xs={6} >
                 <Typography>
@@ -84,13 +87,22 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
                   0.03%
                 </Typography>
               </Grid>
-              <Grid item md={6}>
-                <CustomButtonWhite fullWidth>Cancel</CustomButtonWhite>
+              <Grid item xs={6}>
+                <CustomButtonWhite disableRipple fullWidth onClick={handleClose}>Cancel</CustomButtonWhite>
               </Grid>
-              <Grid item md={6}>
-                <CustomButtonPurple fullWidth>Approve
-                  <AvaxIcon sx={{ fontSize: 22, marginLeft: 1, marginRight: 1 }} />
-                  USDT.e
+              <Grid item xs={6}>
+                <CustomButtonPurple fullWidth disableRipple>
+                  <Grid container justifyContent={"center"} alignItems={"center"} spacing={1}>
+                    <Grid item>
+                      <Typography variant='button'>Approve</Typography>
+                    </Grid>
+                    <Grid item>
+                      <CustomImageHolder width={20} height={20} imgUrl={'https://miro.medium.com/max/1000/1*RK1R9BV_5-_2yXLWjuP-qw.png'} alt={'token'}></CustomImageHolder>
+                    </Grid>
+                    <Grid item>
+                      <Typography variant='button'>USDT.e</Typography>
+                    </Grid>
+                  </Grid>
                 </CustomButtonPurple>
               </Grid>
             </Grid>

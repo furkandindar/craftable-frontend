@@ -1,7 +1,9 @@
 import { Dialog, Paper, Slider, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import React from 'react';
 import { AvaxIcon } from '../../../assets/icons';
-import { CustomButtonPurple, CustomButtonWhite } from '../../../components/CustomButtons';
+import { CustomButtonPurple, CustomButtonSecondary, CustomButtonWhite } from '../../../components/CustomButtons';
+import CustomImageHolder from '../../../components/CustomImageHolder';
 
 export interface ConfirmWithdrawProps {
   open: boolean;
@@ -9,6 +11,13 @@ export interface ConfirmWithdrawProps {
 }
 
 function ConfirmWithdraw(props: ConfirmWithdrawProps) {
+
+  const [value, setValue] = React.useState<number>(30);
+
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    setValue(newValue as number);
+  };
+
   const { onClose, open } = props;
 
   const handleClose = () => {
@@ -19,25 +28,31 @@ function ConfirmWithdraw(props: ConfirmWithdrawProps) {
     onClose();
   };
 
+  const handleMaxClick = () => {
+    setValue(100);
+  }
+
   return (
     <Dialog onClose={handleClose} open={open}>
       <Grid container justifyContent={"center"} direction="row" spacing={2}>
         <Paper
           sx={{
             padding: 4,
-            background: "#82368c", color: "white", '& .MuiMenuItem-root': {
-              borderBottom: "1px solid white",
-            },
-            '& .MuiMenuItem-root:last-child': {
-              borderBottom: 'none'
-            },
+            backgroundColor: "primary.main", color: "white",
             width: 600
           }}>
-          <Stack spacing={4} alignItems={"center"}>
-            <Typography variant='h6'>Confirm Withdraw
-              <AvaxIcon sx={{ fontSize: 33, marginLeft: 1, marginRight: 1 }} />
-              USDT.e
-            </Typography>
+          <Stack spacing={1.5} alignItems={"center"}>
+            <Grid container justifyContent={"center"} alignItems="center" spacing={1}>
+                <Grid item>
+                  <Typography variant='h6'>Confirm Withdraw</Typography>
+                </Grid>
+                <Grid item>
+                  <CustomImageHolder width={30} height={30} imgUrl={'https://miro.medium.com/max/1000/1*RK1R9BV_5-_2yXLWjuP-qw.png'} alt={'token'}></CustomImageHolder>
+                </Grid>
+                <Grid item>
+                  <Typography variant='h6'>USDT.e</Typography>
+                </Grid>
+            </Grid>
             <Grid container justifyContent={"center"} direction="row" spacing={2}>
               <Grid item xs={6} >
                 <Typography>
@@ -50,26 +65,30 @@ function ConfirmWithdraw(props: ConfirmWithdrawProps) {
                 </Typography>
               </Grid>
             </Grid>
-            <Paper sx={{ width: "100%", height: 120, paddingTop: 2 }} >
-              <Grid container justifyContent={"center"} direction="row" padding={2}>
+            <Grid container justifyContent={"center"} direction="row" spacing={2}>
+            <Grid item container>
+            <Paper sx={{ width: "100%", borderRadius:2 }} >
+              <Grid container justifyContent={"center"} direction="row" padding={2} alignItems={"center"}>
                 <Grid item xs={8}>
                   <Typography>
-                    100
+                    {value}
                   </Typography>
                 </Grid>
                 <Grid item xs={2}>
-                  <Typography textAlign={"right"}>
+                  <Typography textAlign={"right"} color="secondary.main">
                     /100%
                   </Typography>
                 </Grid>
                 <Grid item xs={2} textAlign={"right"}>
-                  <CustomButtonPurple sx={{ height: 40 }}>MAX</CustomButtonPurple>
+                  <CustomButtonSecondary disableRipple onClick={handleMaxClick}>Max</CustomButtonSecondary>
                 </Grid>
                 <Grid item xs={12}>
-                  <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+                  <Slider value={value} onChange={handleChange} aria-label="value" />
                 </Grid>
               </Grid>
             </Paper>
+            </Grid>
+            </Grid>
             <Grid container justifyContent={"center"} direction="row" spacing={2}>
               <Grid item xs={6} >
                 <Typography>
@@ -124,10 +143,10 @@ function ConfirmWithdraw(props: ConfirmWithdrawProps) {
                   0.0%
                 </Typography>
               </Grid>
-              <Grid item md={6}>
-                <CustomButtonWhite fullWidth>Cancel</CustomButtonWhite>
+              <Grid item xs={6}>
+                <CustomButtonWhite fullWidth onClick={handleClose}>Cancel</CustomButtonWhite>
               </Grid>
-              <Grid item md={6}>
+              <Grid item xs={6}>
                 <CustomButtonPurple fullWidth>Approve
                 </CustomButtonPurple>
               </Grid>
