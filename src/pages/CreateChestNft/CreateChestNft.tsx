@@ -20,7 +20,7 @@ const CreateChestNft = () => {
                         <Paper
                             sx={{
                                 padding: 10,
-                                background: "#82368c", color: "white", '& .MuiMenuItem-root': {
+                                backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
                                     borderBottom: "1px solid white",
                                 },
                                 '& .MuiMenuItem-root:last-child': {
@@ -32,7 +32,7 @@ const CreateChestNft = () => {
                                 <Typography variant='h4'>Chest</Typography>
                                 <Typography align='center'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Typography>
                                
-                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/create/chest"> <CustomButtonWhite sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonWhite></Link>
+                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/create/chest"> <CustomButtonWhite sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonWhite></Link>
 
                             </Stack>
                         </Paper>
@@ -53,7 +53,7 @@ const CreateChestNft = () => {
                                 <Typography variant='h4'>NFT’s</Typography>
                                 <Typography align='center'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Typography>
                                 
-                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/create/nft"> <CustomButtonGradient sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonGradient></Link>
+                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/create/nft"> <CustomButtonGradient sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonGradient></Link>
 
                             </Stack>
                         </Paper>

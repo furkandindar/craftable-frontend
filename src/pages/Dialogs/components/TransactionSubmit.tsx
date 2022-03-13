@@ -16,32 +16,23 @@ function TransactionSubmit(props: TransactionSubmitProps) {
     onClose();
   };
 
-  const handleListItemClick = () => {
-    onClose();
-  };
-
   return (
     <Dialog onClose={handleClose} open={open}>
       <Grid container justifyContent={"center"} direction="row" spacing={2}>
         <Paper
           sx={{
             padding: 4,
-            background: "#82368c", color: "white", '& .MuiMenuItem-root': {
-              borderBottom: "1px solid white",
-            },
-            '& .MuiMenuItem-root:last-child': {
-              borderBottom: 'none'
-            },
+            backgroundColor: "primary.main", color: "white",
             width: 600
           }}>
-          <Stack spacing={4} alignItems={"center"}>
+          <Stack spacing={2} alignItems={"center"}>
             <CheckCircleOutlineRoundedIcon sx={{ fontSize: 60 }} />
-            <Typography variant='h6'>Transaction submitted</Typography>
+            <Typography variant='h6' pb={3}>Transaction submitted</Typography>
 
-            <CustomButtonWhite fullWidth sx={{ height: 50 }}>
+            <CustomButtonWhite disableRipple fullWidth >
               View On Snow Trace
             </CustomButtonWhite>
-            <CustomButtonPurple fullWidth sx={{ height: 50 }}>
+            <CustomButtonPurple disableRipple fullWidth onClick={handleClose}>
               Done
             </CustomButtonPurple>
           </Stack>

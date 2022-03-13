@@ -62,3 +62,13 @@ export const CustomButtonGradientToBlack = styled(Button)<ButtonProps>(({theme})
     }
   })
 );
+
+export const CustomVoteButton = styled(Button)<ButtonProps>(({theme}) => ({
+  backgroundColor: "white",
+  color: "black",
+  '&:hover': {
+      backgroundColor: theme.palette.primary.dark,
+      color:"white"
+  }
+})
+);
