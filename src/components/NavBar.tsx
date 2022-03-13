@@ -115,90 +115,76 @@ const StyledInputBaseLarge = styled(InputBase)(({ theme }) => ({
 
 const ExploreMenu = () => {
   let navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLButtonElement>(null);
-
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
   };
-
-  const handleClose = (event: Event | React.SyntheticEvent) => {
-    // if (
-    //   anchorRef.current &&
-    //   anchorRef.current.contains(event.target as HTMLElement)
-    // ) {
-    //   return;
-    // }
-
-    setOpen(false);
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
       <div>
         <Typography
-          ref={anchorRef}
           id="composition-button"
           aria-controls={open ? 'composition-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-haspopup="true"
-          onClick={(event)=>{navigate("/marketplace");handleClose(event)}}
-          onMouseOver={handleToggle}
-          sx={{'&:hover': {color:"#82368C", fontWeight:"bold", cursor:"pointer"}}}
+          onClick={handleClick}
+          sx={{'&:hover': {color:"primary.main", fontWeight:"bold", cursor:"pointer"}}}
         >
           Explore
         </Typography>
-        <Popper
+        <Menu
           open={open}
-          anchorEl={anchorRef.current}
-          role={undefined}
-          placement="bottom"
-          transition
-          onMouseLeave={handleClose}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          sx={{'& .MuiList-root': {
+            padding: 0,
+            paddingTop:"0px !important",
+            paddingBottom:0,
+          },
+          '& .MuiMenu-list':{
+            padding:0,
+            paddingTop:"0px !important",
+            paddingBottom:0,
+          }}}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
         >
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              style={{
-                transformOrigin:
-                  placement === 'bottom' ? 'left top' : 'left bottom',
-              }}
-            >
-              <Paper sx={{background:"#82368c", color:"white",'& .MuiMenuItem-root':{
+              <Paper sx={{backgroundColor:"primary.main", color:"white", height:"100%",'& .MuiMenuItem-root':{
                   borderBottom: "1px solid white",
               },
               '& .MuiMenuItem-root:last-child':{
                 borderBottom: 'none'
               },
-              '& .MuiList-root': {
-                padding: 0,
-            }}}>
-                  <MenuList
-                    id="composition-menu"
-                    aria-labelledby="composition-button"
-                    onMouseLeave={handleClose}
-                  >
-                    <MenuItem onClick={(event)=>{navigate("/marketplace");handleClose(event)}}>Marketplace</MenuItem>
-                    <MenuItem onClick={(event)=>{navigate("/collection");handleClose(event)}}>Collection</MenuItem>
-                    <MenuItem onClick={(event)=>{navigate("/chest");handleClose(event)}}>Chest</MenuItem>
-                    <MenuItem onClick={(event)=>{navigate("/company");handleClose(event)}}>Company</MenuItem>
+              }}>
+                  <MenuList>
+                    <MenuItem onClick={(event)=>{navigate("/marketplace");handleClose();}}>Marketplace</MenuItem>
+                    <MenuItem onClick={(event)=>{navigate("/explore");handleClose();}}>Collection</MenuItem>
+                    <MenuItem onClick={(event)=>{navigate("/chest");handleClose();}}>Chest</MenuItem>
+                    <MenuItem onClick={(event)=>{navigate("/company");handleClose();}}>Company</MenuItem>
                   </MenuList>
               </Paper>
-            </Grow>
-          )}
-        </Popper>
+        </Menu>
       </div>
   );
 }
 
 function NavBar() {
   let navigate = useNavigate();
-  const routexx = routes.filter(x => x.hidden !== true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
   const [searchBoxClicked, setSearchBoxClicked] = useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -206,14 +192,6 @@ function NavBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -225,15 +203,24 @@ function NavBar() {
     setAnchorEl(null);
   };
 
-  const [openProfile, setOpenProfile] = React.useState(false);
-  const anchorRefProfile = React.useRef<HTMLButtonElement>(null);
+  // const [openProfile, setOpenProfile] = React.useState(false);
+  // const anchorRefProfile = React.useRef<HTMLButtonElement>(null);
 
-  const handleToggleProfile = () => {
-    setOpenProfile((prevOpen) => !prevOpen);
+  // const handleToggleProfile = () => {
+  //   setOpenProfile((prevOpen) => !prevOpen);
+  // };
+
+  // const handleCloseProfile = (event: Event | React.SyntheticEvent) => {
+  //   setOpenProfile(false);
+  // };
+  const [anchorElProfile, setAnchorElProfile] = useState<null | HTMLElement>(null);
+  const profileOpen = Boolean(anchorElProfile);
+  const handleProfileClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElProfile(event.currentTarget);
   };
 
-  const handleCloseProfile = (event: Event | React.SyntheticEvent) => {
-    setOpenProfile(false);
+  const handleProfileClose = () => {
+    setAnchorElProfile(null);
   };
 
   
@@ -241,7 +228,7 @@ function NavBar() {
     <AppBar position="static" color='transparent'>
         <Toolbar>
           <Box sx={{ mr: 7, display: { xs: 'none', md: 'flex' } }}>
-            <img src={craftableLogo} alt='craftable' style={{ maxWidth: "175px" }} onClick={()=>{navigate("/")}} />
+            <img src={craftableLogo} alt='craftable' style={{ maxWidth: "175px", cursor:"pointer" }} onClick={()=>{navigate("/")}} />
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -276,7 +263,7 @@ function NavBar() {
             </Menu>
           </Box>
           <Box sx={{ ml: 2, display: { xs: 'flex', md: 'none' } }}>
-            <img src={craftableLogo} alt='craftable' style={{ maxWidth: "175px" }} onClick={()=>{navigate("/")}}/>
+            <img src={craftableLogo} alt='craftable' style={{ maxWidth: "175px", cursor:"pointer" }} onClick={()=>{navigate("/")}}/>
           </Box>
           <Box sx={{flexGrow:2,display: { xs: 'none', md: 'flex' }}}>
             {isLoggedIn ?
@@ -303,15 +290,15 @@ function NavBar() {
             <Stack direction="row" spacing={3} alignItems="center">
               {isLoggedIn ? <>
                 <ExploreMenu/>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/earn">Earn</Link>
-                <Link component={RouterLink} underline="none" color="inherit"  sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/bond">Bond</Link>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/craft">Craft</Link>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/governance">Governance</Link>
+                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
+                <Link component={RouterLink} underline="none" color="inherit"  sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/bond">Bond</Link>
+                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/craft">Craft</Link>
+                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/governance">Governance</Link>
               </>
                : 
                <>
                 <ExploreMenu/>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"#82368C", fontWeight:"bold"}}} to="/earn">Earn</Link>
+                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
                </>}
             </Stack>
           </Box>
@@ -325,53 +312,50 @@ function NavBar() {
                    <Grid item>
                      <div>
                         <IconButton
-                        ref={anchorRefProfile}
                         id="profile-button"
-                        aria-controls={openProfile ? 'profile-menu' : undefined}
-                        aria-expanded={openProfile ? 'true' : undefined}
+                        aria-controls={profileOpen ? "profile-menu" : undefined}
+                        aria-expanded={profileOpen ? "true" : undefined}
                         aria-haspopup="true"
-                        onClick={(event)=>{navigate("/marketplace");handleCloseProfile(event)}}
-                        onMouseOver={handleToggleProfile}
+                        onClick={handleProfileClick}
                         sx={{padding:0}} disableRipple>
                                     <Avatar sx={{ backgroundColor: "primary.main", height: "40.5px", width: "40.5px", "&:hover": { border: "3px solid white" } }}>P</Avatar>
                                     </IconButton>
-                        <Popper
-                          open={openProfile}
-                          anchorEl={anchorRefProfile.current}
-                          role={undefined}
-                          placement="bottom"
-                          transition
-                          onMouseLeave={handleCloseProfile}
+                        <Menu
+                          open={profileOpen}
+                          anchorEl={anchorElProfile}
+                          onClose={handleProfileClose}
+                          sx={{'& .MuiList-root': {
+                            padding: 0,
+                            paddingTop:"0px !important",
+                            paddingBottom:0,
+                          },
+                          '& .MuiMenu-list':{
+                            padding:0,
+                            paddingTop:"0px !important",
+                            paddingBottom:0,
+                          }}}
+                          anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                          }}
+                          transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                          }}
                         >
-                          {({ TransitionProps, placement }) => (
-                            <Grow
-                              {...TransitionProps}
-                              style={{
-                                transformOrigin:
-                                  placement === 'bottom' ? 'left top' : 'left bottom',
-                              }}
-                            >
-                              <Paper sx={{background:"#82368c", color:"white",'& .MuiMenuItem-root':{
+                              <Paper sx={{backgroundColor:"primary.main", color:"white",'& .MuiMenuItem-root':{
                                   borderBottom: "1px solid white",
                               },
                               '& .MuiMenuItem-root:last-child':{
                                 borderBottom: 'none'
                               },
-                              '& .MuiList-root': {
-                                padding: 0,
-                            }}}>
-                                  <MenuList
-                                    id="profile-menu"
-                                    aria-labelledby="profile-button"
-                                    onMouseLeave={handleCloseProfile}
-                                  >
-                                    <MenuItem onClick={(event)=>{navigate("/dashboard");handleCloseProfile(event)}}>Dashboard</MenuItem>
-                                    <MenuItem onClick={(event)=>{setIsLoggedIn(!isLoggedIn);handleCloseProfile(event)}}>Logout</MenuItem>
+                              }}>
+                                  <MenuList>
+                                    <MenuItem onClick={()=>{navigate("/dashboard");handleProfileClose()}}>Dashboard</MenuItem>
+                                    <MenuItem onClick={()=>{setIsLoggedIn(!isLoggedIn);handleProfileClose()}}>Logout</MenuItem>
                                   </MenuList>
                               </Paper>
-                            </Grow>
-                          )}
-                        </Popper>
+                        </Menu>
                       </div>
                    </Grid>
                    <Grid item paddingX={2}>

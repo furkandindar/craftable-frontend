@@ -44,7 +44,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const PartnerPaper = () => {
     return(
-        <Item sx={{backgroundColor:"#82368C", border:"1px solid rgba(255,255,255,0.5)", color:"white",minWidth:"180px",maxWidth:"210px"}}>
+        <Item sx={{backgroundColor:"primary.main", border:"1px solid rgba(255,255,255,0.5)", color:"white",minWidth:"180px",maxWidth:"210px"}}>
                 Partner
         </Item>
     );

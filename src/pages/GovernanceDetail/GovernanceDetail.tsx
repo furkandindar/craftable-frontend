@@ -157,7 +157,7 @@ const GovernanceDetail = () => {
                         <Paper
                             sx={{
                                 padding: 10,
-                                background: "#82368c", color: "white", '& .MuiMenuItem-root': {
+                                backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
                                     borderBottom: "1px solid white",
                                 },
                                 '& .MuiMenuItem-root:last-child': {
@@ -175,7 +175,7 @@ const GovernanceDetail = () => {
                         <Paper
                             sx={{
                                 padding: 10,
-                                background: "#82368c", color: "white", '& .MuiMenuItem-root': {
+                                backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
                                     borderBottom: "1px solid white",
                                 },
                                 '& .MuiMenuItem-root:last-child': {
@@ -193,7 +193,7 @@ const GovernanceDetail = () => {
                         <Paper
                             sx={{
                                 padding: 10,
-                                background: "#82368c", color: "white", '& .MuiMenuItem-root': {
+                                backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
                                     borderBottom: "1px solid white",
                                 },
                                 '& .MuiMenuItem-root:last-child': {
