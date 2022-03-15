@@ -43,21 +43,21 @@ export default function SimpleDialogDemo() {
         onClose={handleClose}
       /> */}
 
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleClickOpen}>
         Open WaitConfirm
       </Button>
       <WaitConfirm
         open={open}
         onClose={handleClose}
-      /> */}
+      />
 
-      <Button variant="outlined" onClick={handleClickOpen}>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open TransactionSubmit
       </Button>
       <TransactionSubmit
         open={open}
         onClose={handleClose}
-      />
+      /> */}
     </div>
   );
 }

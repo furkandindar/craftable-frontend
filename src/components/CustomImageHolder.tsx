@@ -10,8 +10,8 @@ interface ImgProps{
 
 const CustomImageHolder = (props: ImgProps) => {
   return (
-    <Box height={props.height} width={props.width}>
-        <img height={props.height} width={props.width} style={{borderRadius:"50%"}} src={props.imgUrl} alt={props.alt}></img>
+    <Box maxWidth={props.width} maxHeight={props.height}>
+        <img width={"100%"} style={{borderRadius:"50%"}} src={props.imgUrl} alt={props.alt}></img>
     </Box>
   )
 }

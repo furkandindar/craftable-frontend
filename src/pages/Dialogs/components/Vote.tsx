@@ -29,14 +29,6 @@ function Vote(props: VoteProps) {
             backgroundColor: "primary.main", color: "white",
             width: 600
           }}>
-          {/* <Box display="flex" alignItems="center">
-            <Box flexGrow={1}></Box>
-            <Box>
-              <IconButton onClick={onClose}>
-                <CloseIcon />
-              </IconButton>
-            </Box>
-          </Box> */}
           <Stack spacing={2} alignItems={"center"}>
             <Typography variant='h5' gutterBottom>Vote</Typography>
             <Paper elevation={0} sx={{backgroundColor:"primary.main", color:"white", border:"1px solid white",p:2}}>
@@ -61,14 +53,6 @@ function Vote(props: VoteProps) {
                 </CustomVoteButton>
               </Grid>
               <Grid item container xs={12}>
-                <Grid item container>
-                <CustomTextField InputProps={{ sx: { height: 60, background: "white", borderRadius:50 }, endAdornment:<Typography pr={1} variant='h6'>AP</Typography> }} type={"number"} placeholder={"Amount"}></CustomTextField>
-                </Grid>
-                <Grid item container justifyContent="flex-end" pt={0.75}>
-                  <Typography align="right" pr={1} variant='body2'>Balance:</Typography>
-                  <Typography align="right" pr={0.5} fontWeight={600} variant='body2'>600</Typography>
-                  <Typography align="right" fontWeight={600} variant='body2'>AP</Typography>
-                </Grid>
                 <Grid item container>
                   <CustomButtonPurple disableRipple fullWidth sx={{ marginTop: 3 }}>
                     Submit

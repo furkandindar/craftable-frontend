@@ -35,7 +35,7 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
               <Grid item>
                 <Typography variant='h6'>Confirm Deposit</Typography>
               </Grid>
-              <Grid item>
+              <Grid item xs={1} md={0.8}>
                 <CustomImageHolder width={30} height={30} imgUrl={'https://miro.medium.com/max/1000/1*RK1R9BV_5-_2yXLWjuP-qw.png'} alt={'token'}></CustomImageHolder>
               </Grid>
               <Grid item>
