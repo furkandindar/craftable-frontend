@@ -89,3 +89,7 @@ input[type=number] {
 .rec.rec-slider-container{
   margin: 5;
 }
+
+.grid-wrapper :hover p{
+  color:white;
+}
