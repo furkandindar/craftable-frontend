@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 const CustomLink = styled(Typography)<TypographyProps>(({theme}) => ({
   cursor: "pointer",
     '&:hover': {
-        color: "#82368C",
+        color: "primary.main",
         fontWeight: "bold",
     },
 }));
@@ -49,7 +49,7 @@ const ExploreMenu = () => {
         <Menu
           sx={{
               '& .MuiPaper-root':{
-                  backgroundColor:"#82368C",
+                  backgroundColor:"primary.main",
                   color: 'white',
               },
               '& .MuiMenuItem-root':{

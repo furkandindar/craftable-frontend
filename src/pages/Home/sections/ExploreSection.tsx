@@ -23,7 +23,7 @@ const ChestCard = () => {
           image={require("../../../assets/chestImgPlaceholder.png")}
           alt="green iguana"
         />
-        <CardContent sx={{backgroundColor:"#82368C"}}>
+        <CardContent sx={{backgroundColor:"primary.main"}}>
           <Grid container justifyContent="center" direction="column" spacing={1}>
             <Grid item xs={12} container justifyContent="center">
               <WhiteTypography variant="subtitle1" sx={{fontWeight:"bold"}}>

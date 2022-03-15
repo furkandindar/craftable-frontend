@@ -20,6 +20,7 @@ import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
 import reportWebVitals from './reportWebVitals';
 import Governance from './pages/Governance/Governance';
+import Explore from './pages/Explore/Explore';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -43,6 +44,7 @@ ReactDOM.render(
           <Route path='governance/detail' element={<GovernanceDetail />}/>
           <Route path='company' element={<Company />}/>
           <Route path='governance' element={<Governance />}/>
+          <Route path='explore' element={<Explore/>}></Route>
           <Route
             path="*"
             element={

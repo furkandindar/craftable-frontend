@@ -19,13 +19,13 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open ConfirmDeposit
       </Button>
       <ConfirmDeposit
         open={open}
         onClose={handleClose}
-      />
+      /> */}
       
       {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open Vote
@@ -43,13 +43,13 @@ export default function SimpleDialogDemo() {
         onClose={handleClose}
       /> */}
 
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleClickOpen}>
         Open WaitConfirm
       </Button>
       <WaitConfirm
         open={open}
         onClose={handleClose}
-      /> */}
+      />
 
       {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open TransactionSubmit

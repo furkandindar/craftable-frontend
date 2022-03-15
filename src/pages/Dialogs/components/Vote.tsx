@@ -1,9 +1,9 @@
-import { Box, Dialog, IconButton, Paper, Stack, Typography } from '@mui/material';
+import { Box, Dialog, IconButton, Paper, Stack, Typography, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { CustomButtonPurple } from '../../../components/CustomButtons';
+import { CustomButtonPurple, CustomVoteButton } from '../../../components/CustomButtons';
 import CustomTextField from '../../../components/CustomTextField';
-import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
-import ThumbDownAltRoundedIcon from '@mui/icons-material/ThumbDownAltRounded';
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ThumbDownOutlinedIcon from '@mui/icons-material/ThumbDownOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 
 export interface VoteProps {
@@ -14,11 +14,8 @@ export interface VoteProps {
 function Vote(props: VoteProps) {
   const { onClose, open } = props;
 
-  const handleClose = () => {
-    onClose();
-  };
 
-  const handleListItemClick = () => {
+  const handleClose = () => {
     onClose();
   };
 
@@ -29,48 +26,38 @@ function Vote(props: VoteProps) {
         <Paper
           sx={{
             padding: 4,
-            background: "#82368c", color: "white", '& .MuiMenuItem-root': {
-              borderBottom: "1px solid white",
-            },
-            '& .MuiMenuItem-root:last-child': {
-              borderBottom: 'none'
-            },
+            backgroundColor: "primary.main", color: "white",
             width: 600
           }}>
-          <Box display="flex" alignItems="center">
-            <Box flexGrow={1}></Box>
-            <Box>
-              <IconButton onClick={onClose}>
-                <CloseIcon />
-              </IconButton>
-            </Box>
-          </Box>
-          <Stack spacing={4} alignItems={"center"}>
-            <Typography variant='h5'>Vote</Typography>
-            <Typography sx={{ fontSize: 13, padding: 2 }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Typography>
+          <Stack spacing={2} alignItems={"center"}>
+            <Typography variant='h5' gutterBottom>Vote</Typography>
+            <Paper elevation={0} sx={{backgroundColor:"primary.main", color:"white", border:"1px solid white",p:2}}>
+            <Typography align='center' sx={{ fontSize: 13}}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Typography>
+            </Paper>
 
             <Grid container justifyContent={"center"} direction="row" spacing={2}>
               <Grid item xs={6}>
-                <Paper sx={{ padding: 4 }}>
+                <CustomVoteButton disableRipple fullWidth sx={{height:"100%", py:3}}>
                   <Stack alignItems={"center"}>
-                    <ThumbUpAltRoundedIcon />
-                    <Typography variant='h6'>YES</Typography>
+                    <ThumbUpOutlinedIcon/>
+                    <Typography variant='h6' fontWeight={400}>YES</Typography>
                   </Stack>
-                </Paper>
+                </CustomVoteButton>
               </Grid>
               <Grid item xs={6}>
-                <Paper sx={{ padding: 4 }}>
-                  <Stack alignItems={"center"}>
-                    <ThumbDownAltRoundedIcon />
-                    <Typography variant='h6'>NO</Typography>
+                <CustomVoteButton disableRipple fullWidth sx={{height:"100%", py:3}}>
+                <Stack alignItems={"center"}>
+                    <ThumbDownOutlinedIcon/>
+                    <Typography variant='h6' fontWeight={400}>NO</Typography>
                   </Stack>
-                </Paper>
+                </CustomVoteButton>
               </Grid>
-              <Grid item xs={12}>
-                <CustomTextField InputProps={{ sx: { height: 60, background: "white" } }} type={"number"} placeholder={"0.00"}></CustomTextField>
-                <CustomButtonPurple fullWidth sx={{ height: 50, marginTop: 3 }}>
-                  Vote
-                </CustomButtonPurple>
+              <Grid item container xs={12}>
+                <Grid item container>
+                  <CustomButtonPurple disableRipple fullWidth sx={{ marginTop: 3 }}>
+                    Submit
+                  </CustomButtonPurple>
+                </Grid>
               </Grid>
             </Grid>
 

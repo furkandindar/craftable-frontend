@@ -1,6 +1,6 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import * as MuiLink from '@mui/material/Link';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { useLocation } from 'react-router-dom'
@@ -32,6 +32,11 @@ export const routes = [
 const UcBreadcrumbs = () => {
     const breadcrumbs = useBreadcrumbs(routes);
     const location = useLocation();
+    let navigate = useNavigate();
+
+    const handleLinkClick = (pathname: string) => {
+        navigate(pathname);
+    }
 
     return (
         <>
@@ -42,29 +47,34 @@ const UcBreadcrumbs = () => {
                         match,
                         breadcrumb
                     }, index) => (
-                        <>
+                        <div key={index}>
                             {index === breadcrumbs.length - 1 ?
                                 <MuiLink.default
                                     underline="none"
                                     color="text.primary"
                                     aria-current="page"
+                                    key={index}
+                                    sx={{cursor:"pointer"}}
                                 >
                                     {breadcrumb}
                                 </MuiLink.default>
                                 :
-                                <Link to={match.pathname}>
+                                
                                     <MuiLink.default
                                         underline="hover"
                                         color="text.primary"
                                         aria-current="page"
+                                        key={index}
+                                        onClick={() => handleLinkClick(match.pathname)}
+                                        sx={{cursor:"pointer"}}
                                     >
                                         {breadcrumb}
                                     </MuiLink.default>
-                                </Link>
+                                
                             }
 
 
-                        </>
+                        </div>
                     ))}
                 </Breadcrumbs>
             }
