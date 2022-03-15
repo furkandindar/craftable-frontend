@@ -4,6 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { CustomButtonGradient, CustomButtonPrimary } from '../../../components/CustomButtons';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CraftItemCard from '../../../components/CraftItemCard';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -108,28 +109,16 @@ const CraftSection = () => {
                     </Accordion>
                     </Grid>
                     <Grid item xs={9}>
-                        <Paper>
+                        <Paper sx={{p:1,maxHeight:"60vh", overflowY:"scroll"}}>
                             <Grid container direction="column">
-                                <Grid item container>
-                                    <Typography>img</Typography>
-                                    <Typography>Earth</Typography>
-                                    <Typography>1</Typography>
-                                    <Typography>none</Typography>
-                                </Grid>
-                                <Divider/>
-                                <Grid item container>
-                                    <Typography>img</Typography>
-                                    <Typography>Earth</Typography>
-                                    <Typography>1</Typography>
-                                    <Typography>none</Typography>
-                                </Grid>
-                                <Divider/>
-                                <Grid item container>
-                                    <Typography>img</Typography>
-                                    <Typography>Earth</Typography>
-                                    <Typography>1</Typography>
-                                    <Typography>none</Typography>
-                                </Grid>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
+                                <CraftItemCard/>
                             </Grid>
                         </Paper>
                     </Grid>
