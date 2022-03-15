@@ -1,9 +1,5 @@
 import { Avatar, Box, Button, Card, CardActions, CardContent, CardMedia, FormControlLabel, Paper, Radio, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import React from 'react';
-import CustomSwitch from '../../components/CustomSwitch';
-import CustomTextField from '../../components/CustomTextField';
-import CustomUploader from '../../components/CustomUploader';
 import { CustomButtonGradient, CustomButtonPrimary, CustomButtonWhite } from '../../components/CustomButtons';
 import createChestImg from "../../assets/create-chest.png";
 import createNftImg from "../../assets/create-nft.png";
