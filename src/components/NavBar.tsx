@@ -14,19 +14,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import LogoutIcon from '@mui/icons-material/Logout';
 import { CustomButtonGradient, CustomButtonGradientToBlack } from './CustomButtons';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { routes } from '../shared/Breadcrumb';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
-import Popper from '@mui/material/Popper';
-import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
-import CustomTextField from './CustomTextField';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -132,9 +128,10 @@ const ExploreMenu = () => {
           aria-expanded={open ? 'true' : undefined}
           aria-haspopup="true"
           onClick={handleClick}
-          sx={{'&:hover': {color:"primary.main", fontWeight:"bold", cursor:"pointer"}}}
+          sx={open ? {alignItems:"center", display:"flex",color:"primary.main", fontWeight:"bold",  '&:hover': {color:"primary.main", fontWeight:"bold", cursor:"pointer"}} : {alignItems:"center", display:"flex", '&:hover': {color:"primary.main", fontWeight:"bold", cursor:"pointer"}}}
         >
           Explore
+          <ExpandMoreIcon/>
         </Typography>
         <Menu
           open={open}
