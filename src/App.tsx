@@ -1,20 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import "./App.css";
-import { Typography, Grid, Button, Paper, Switch, Box, Container} from '@mui/material';
+import { Grid, Paper} from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar, { ColorModeContext } from './components/NavBar';
-import Home from './pages/Home/Home';
 import Footer from './components/Footer';
-import backgroundImg from "./assets/backgroundImg.png"
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import Layout from './pages/Layout';
-import Bond from './pages/Bond/Bond';
-import MarketPlace from './pages/MarketPlace/MarketPlace';
-import NftDetail from './pages/NftDetail/NftDetail';
-import CreateChest from './pages/CreateChest/CreateChest';
-import CreateNft from './pages/CreateNft/CreateNft';
-import Dashboard from './pages/Dashboard/Dashboard';
-import CreateChestNft from './pages/CreateChestNft/CreateChestNft';
+import { Outlet } from "react-router-dom";
 import UcBreadcrumbs from './shared/Breadcrumb';
 
 //const ColorModeContext = React.createContext({ toggleColorMode: () => {} });

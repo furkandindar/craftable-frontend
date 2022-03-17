@@ -1,66 +1,70 @@
-import { Box, Grid, Paper, Typography } from '@mui/material'
-import React from 'react'
+import { Grid, Paper, Typography } from '@mui/material'
 import { CustomButtonPrimary, CustomButtonSecondary } from './CustomButtons'
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import Tooltip from '@mui/material/Tooltip';
 
 const PoolCardCraft = () => {
     return (
-        <Paper sx={{ p: 4 }}>
-            <Grid container spacing={3} alignItems={"center"}>
-                <Grid item xs={12} md={1} container direction={"column"} sx={{ justifyContent: { xs: "center" } }}>
+        <Paper sx={{p:3.5}}>
+            <Grid container spacing={1} alignItems={"center"}>
+                <Grid item xs={12} md={1.5} spacing={1} container direction={"column"} sx={{justifyContent:{xs:"center"}}}>
                     <Grid item>
-                        <Typography fontWeight={600}>Pool</Typography>
+                        <Typography>Pool</Typography>
                     </Grid>
                     <Grid item>
                         <Typography fontWeight={600}>Craft</Typography>
                     </Grid>
                 </Grid>
-                <Grid item container xs={12} md={10} justifyContent={"center"}>
-                    <Grid item container direction={"column"} xs={6} md={2}>
+                <Grid item container xs={12} md={9.5} justifyContent={"space-between"}>
+                    <Grid item container direction={"column"} xs={6} md={2} spacing={1}>
                         <Grid item>
-                            <Typography>Total Deposit</Typography>
+                            <Typography align='center'>Total Deposits</Typography>
                         </Grid>
                         <Grid item>
-                            <Typography variant='h6'>2,345,100 Craft</Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid item container direction={"column"} xs={6} md={2}>
-                        <Grid item>
-                            <Typography>Staked</Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant='h6'>9,345 Craft</Typography>
+                            <Typography align='center' fontWeight={600}>2,345,100 Craft</Typography>
                         </Grid>
                     </Grid>
-                    <Grid item container direction={"column"} xs={6} md={2}>
+                    <Grid item container direction={"column"} xs={6} md={2} spacing={1}>
                         <Grid item>
-                            <Typography>Stakable</Typography>
+                            <Typography align='center'>Staked</Typography>
                         </Grid>
                         <Grid item>
-                            <Typography variant='h6'>562 Craft</Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid item container direction={"column"} xs={6} md={2}>
-                        <Grid item>
-                            <Typography>AP Mint Rate </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant='h6'>12 AP/day</Typography>
+                            <Typography align='center' fontWeight={600}>600 AP</Typography>
                         </Grid>
                     </Grid>
-                    <Grid item container direction={"column"} xs={6} md={2}>
+                    <Grid item container direction={"column"} xs={6} md={2} spacing={1}>
                         <Grid item>
-                            <Typography>Reward</Typography>
+                            <Typography align='center'>Stakable</Typography>
                         </Grid>
                         <Grid item>
-                            <Typography variant='h6'>Alchemy Power</Typography>
+                            <Typography align='center' fontWeight={600}>150 AP</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid item container direction={"column"} xs={6} md={2} spacing={1}>
+                        <Grid item container justifyContent={"center"} alignItems={"center"}>
+                            <Typography pr={0.5} align='center'>AP Mint Rate</Typography>
+                            <Tooltip title="Each staked Craft mint AP/day " placement='top' arrow>
+                                <InfoOutlinedIcon sx={{fontSize:"16px"}}/>
+                            </Tooltip>
+                        </Grid>
+                        <Grid item>
+                            <Typography align='center' fontWeight={600}>12 AP/day</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid item container direction={"column"} xs={6} md={2} spacing={1}>
+                        <Grid item>
+                            <Typography align='center'>Reward</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography align='center' fontWeight={600}>Alchemy Power</Typography>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} md={1} container direction={"column"} spacing={1} sx={{ justifyContent: { xs: "right" } }}>
-                    <Grid item xs={4} md={6}>
-                        <CustomButtonPrimary disableRipple fullWidth>Claim</CustomButtonPrimary>
+                <Grid item xs={12} md={1} container spacing={1} sx={{justifyContent:{xs:"center"}}}>
+                    <Grid item xs={6} md={12}>
+                        <CustomButtonPrimary disableRipple fullWidth>Stake</CustomButtonPrimary>
                     </Grid>
-                    <Grid item xs={4} md={6}>
+                    <Grid item xs={6} md={12}>
                         <CustomButtonSecondary disableRipple fullWidth>Unstake</CustomButtonSecondary>
                     </Grid>
                 </Grid>

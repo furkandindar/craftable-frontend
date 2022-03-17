@@ -93,3 +93,8 @@ input[type=number] {
 .grid-wrapper :hover p{
   color:white;
 }
+
+div.swiper-button-prev,
+div.swiper-button-next {
+color: white;
+}

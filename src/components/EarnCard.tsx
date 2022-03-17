@@ -1,6 +1,8 @@
 import { Box, Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
 import { CustomButtonPrimary, CustomButtonSecondary } from './CustomButtons'
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import Tooltip from '@mui/material/Tooltip';
 
 const EarnCard = () => {
   return (
@@ -45,8 +47,11 @@ const EarnCard = () => {
                     </Grid>
                 </Grid>
                 <Grid item container direction={"column"} xs={6} md={3}>
-                    <Grid item>
-                        <Typography>Base APR</Typography>
+                    <Grid item container alignItems={"center"}>
+                        <Typography pr={0.5}>Base APR</Typography>
+                        <Tooltip title="Each staked Craft mint AP/day " placement='top' arrow>
+                            <InfoOutlinedIcon sx={{fontSize:"16px"}}/>
+                        </Tooltip>
                     </Grid>
                     <Grid item>
                         <Typography variant='h6'>13%</Typography>

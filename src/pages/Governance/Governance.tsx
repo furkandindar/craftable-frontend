@@ -1,80 +1,113 @@
-import { Chip, Divider, Grid, LinearProgress, List, ListItem, ListItemText, makeStyles, Paper, Stack, Tabs, Typography } from '@mui/material'
+import { Grid, Paper, Stack, Typography } from '@mui/material'
 import { CustomButtonPrimary, CustomButtonSecondary, CustomButtonWhite } from '../../components/CustomButtons';
-import Carousel from 'react-elastic-carousel';
 import ProposalItem from '../../components/ProposalItem';
-import PoolCard from '../../components/PoolCard';
 import PoolCardAlc from '../../components/PoolCardAlc';
 import PoolCardCraft from '../../components/PoolCardCraft';
-import React from 'react';
+import PollCardView from '../../components/PollCardView';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import Tooltip from '@mui/material/Tooltip';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper";
 
 const paperStyle =
 {
     width: '100%',
-    padding: 4,
-    backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
-        borderBottom: "1px solid white",
-    },
-    '& .MuiMenuItem-root:last-child': {
-        borderBottom: 'none'
-    }
+    height:"100%",
+    padding: 3,
+    backgroundColor: "primary.main",
+    color: "white",
 }
 
-const paperBox = {
-    p: 4,
-    '&:hover': {
-        color: "#fff",
-        backgroundColor: "primary.main"      
-    }
+const darkPaperStyle =
+{
+    width: '100%',
+    height:"100%",
+    padding: 3,
+    backgroundColor: "primary.dark",
+    color: "white"
 }
 
 const Governance = () => {
-    const [progress, setProgress] = React.useState(20);
 
     return (
         <>
             <Grid container justifyContent={"center"} direction="row" spacing={3}>
-                <Grid item xs={4} justifyContent={"center"}>
-                    <Stack spacing={1} alignItems={"center"}>
+                <Grid item xs={12} md={4} justifyContent={"center"}>
+                    <Stack spacing={1} alignItems={"center"} height={"100%"}>
                         <Paper sx={paperStyle}>
-                            <Stack spacing={1} alignItems={"center"}>
-                                <Typography variant='h6'>Your Alchemy Power</Typography>
+                            <Stack alignItems={"center"}>
+                                <Stack direction={"row"} alignItems={"center"} spacing={1}>
+                                    <Typography variant='h6'>Your Alchemy Power</Typography>
+                                    <Tooltip title="The DAO Power on Talecraft. Value depends on your total NFT staked and Craft staked." placement='top' arrow>
+                                        <InfoOutlinedIcon fontSize='small'/>
+                                    </Tooltip>
+                                </Stack>
                                 <Typography variant='h5'>892 AP</Typography>
                             </Stack>
                         </Paper>
                         <Paper
-                            sx={paperStyle}>
-                            <Stack spacing={1} alignItems={"center"}>
-                                <Typography variant='h6'>Your Alchemy Power</Typography>
-                                <Typography variant='h5'>892 AP</Typography>
+                            sx={darkPaperStyle}>
+                            <Stack alignItems={"center"}>
+                                <Typography variant='h6'>Last Activities</Typography>
                             </Stack>
                         </Paper>
                     </Stack>
                 </Grid>
-                <Grid item xs={4} justifyContent={"center"} direction="row">
-                    <Paper
-                        sx={paperStyle}>
-                        <Stack spacing={1} alignItems={"center"}>
-                            <Typography variant='h4' sx={{ marginBottom: 7 }}>NFT Stake</Typography>
-                            <Chip label="490%" sx={{ margin: 0.5, opacity: 0.8, fontSize: 18, backgroundColor: "white", boxShadow: '1px 1px 1px 1px rgba(0,0,0,0.25)' }} />
-                            <Typography variant='h6'>AVAX APR</Typography>
-                            <CustomButtonWhite sx={{ width: 180 }}>Gov Stake</CustomButtonWhite>
-                        </Stack>
+                <Grid item xs={12} md={4} justifyContent={"center"} direction="row">
+                    <Paper sx={paperStyle}>
+                        <Grid container justifyContent={"center"} direction={"column"} spacing={1} alignItems={"center"}>
+                            <Grid item pb={3}>
+                                <Typography variant='h4'>NFT Stake</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Paper sx={{ py: 1, px:2, opacity: 0.7, backgroundColor: "white", boxShadow: 2, borderRadius:5 }}>
+                                    <Typography>490%</Typography>
+                                </Paper>
+                            </Grid>
+                            <Grid item container justifyContent={"center"} alignItems={"center"}>
+                                    <Typography pr={1} variant='h6'>AVAX</Typography>
+                                    <Typography pr={1} variant='h6'>APR</Typography>
+                                    <Tooltip title="Exact AVAX APR you are currently earning. Value depends on your AP balance" placement='top' arrow>
+                                        <InfoOutlinedIcon fontSize='small'/>
+                                    </Tooltip>
+                            </Grid>
+                            <Grid item container justifyContent={"center"}>
+                                <Grid item xs={8}>
+                                    <CustomButtonWhite fullWidth disableRipple>Gov Stake</CustomButtonWhite>
+                                </Grid>
+                            </Grid>
+                        </Grid>
                     </Paper>
                 </Grid>
-                <Grid item xs={4} justifyContent={"center"} direction="row">
-                    <Paper
-                        sx={paperStyle}>
-                        <Stack spacing={1} alignItems={"center"}>
-                            <Typography variant='h6'>Active Proposal #17</Typography>
-                            <Carousel isRTL={false} itemsToShow={1} itemsToScroll={1}>
-                                <ProposalItem />
-                                <ProposalItem />
-                                <ProposalItem />
-                                <ProposalItem />
-                                <ProposalItem />
-                                <ProposalItem />
-                            </Carousel>
-                        </Stack>
+                <Grid item xs={12} md={4} justifyContent={"center"} direction="row">
+                    <Paper sx={paperStyle}>
+                        <Swiper navigation={true} modules={[Navigation]}>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProposalItem/>
+                            </SwiperSlide>
+                        </Swiper>
                     </Paper>
                 </Grid>
             </Grid>
@@ -88,9 +121,9 @@ const Governance = () => {
                 </Grid>
             </Grid>
 
-            <Grid container direction="row" spacing={2} paddingTop={6}>
+            <Grid container direction="row" alignItems={"center"} spacing={2} paddingTop={6}>
                 <Grid item xs={12} md={8} >
-                    <Typography variant='h4'>Pools</Typography>
+                    <Typography variant='h4'>Polls</Typography>
                 </Grid>
                 <Grid item xs={12} md={2}>
                     <CustomButtonSecondary disableRipple fullWidth>Join Forum</CustomButtonSecondary>
@@ -103,36 +136,22 @@ const Governance = () => {
 
             <Grid container direction="row" spacing={2} paddingTop={6}>
                 <Grid item xs={12} md={6}>
-                    <Paper sx={paperBox}>
-                        <Grid container direction="row" spacing={2}>
-                            <Grid item xs={12} md={9} >
-                                <Typography>ID:6</Typography>
-                            </Grid>
-                            <Grid item xs={12} md={3}>
-                                <Typography>Multiple Execute</Typography>
-                            </Grid>
-                        </Grid>
-                        <Typography variant='h6' sx={{ pt: 4 }}>Executed</Typography>
-                        <Typography variant='h4' sx={{ pt: 4 }}>Register Liquidation Queue Contract</Typography>
-                        <Typography paddingLeft={9} paddingTop={6}>Pass Threshold</Typography>
-                        <LinearProgress sx={{ height: 6, borderRadius: 5 }} variant="determinate" value={progress} />
-                        <Grid container direction="row">
-                            <Grid item xs={12} md={10} >
-                                <Typography sx={{ pt: 4 }}>Voted 48.73%</Typography>
-                            </Grid>
-                            <Grid item xs={12} md={2} sx={{ justifyContent: 'right' }}>
-                                <Typography sx={{ pt: 4 }}>Yes 48% No 0%</Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid container direction="row">
-                            <Grid item xs={12} md={8} >
-                                <Typography sx={{ pt: 4 }}>Estimated end time</Typography>
-                            </Grid>
-                            <Grid item xs={12} md={4} sx={{ justifyContent: 'right' }} >
-                                <Typography sx={{ pt: 4 }}>Wed, Nov 10, 2021 9:08:36 PM</Typography>
-                            </Grid>
-                        </Grid>
-                    </Paper>
+                    <PollCardView/>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <PollCardView/>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <PollCardView/>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <PollCardView/>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <PollCardView/>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <PollCardView/>
                 </Grid>
             </Grid>
         </>
