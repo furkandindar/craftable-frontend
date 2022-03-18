@@ -7,57 +7,53 @@ import Vote from "./components/Vote";
 import WaitConfirm from "./components/WaitConfirm";
 
 export default function SimpleDialogDemo() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [openConfirmDeposit, setOpenConfirmDeposit] = React.useState(false);
+  const [openVote, setOpenVote] = React.useState(false);
+  const [openConfirmWithdraw, setOpenConfirmWithdraw] = React.useState(false);
+  const [openWaitConfirm, setOpenWaitConfirm] = React.useState(false);
+  const [openTransactionSubmit, setOpenTransactionSubmit] = React.useState(false);
 
   return (
     <div>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={() => setOpenConfirmDeposit(true)}>
         Open ConfirmDeposit
       </Button>
       <ConfirmDeposit
-        open={open}
-        onClose={handleClose}
-      /> */}
+        open={openConfirmDeposit}
+        onClose={() => setOpenConfirmDeposit(false)}
+      />
       
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={() => setOpenVote(true)}>
         Open Vote
       </Button>
       <Vote
-        open={open}
-        onClose={handleClose}
-      /> */}
+        open={openVote}
+        onClose={() => setOpenVote(false)}
+      />
 
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={() => setOpenConfirmWithdraw(true)}>
         Open ConfirmWithdraw
       </Button>
       <ConfirmWithdraw
-        open={open}
-        onClose={handleClose}
-      /> */}
+        open={openConfirmWithdraw}
+        onClose={() => setOpenConfirmWithdraw(false)}
+      />
 
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={() => setOpenWaitConfirm(true)}>
         Open WaitConfirm
       </Button>
       <WaitConfirm
-        open={open}
-        onClose={handleClose}
+        open={openWaitConfirm}
+        onClose={() => setOpenWaitConfirm(false)}
       />
 
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={() => setOpenTransactionSubmit(true)}>
         Open TransactionSubmit
       </Button>
       <TransactionSubmit
-        open={open}
-        onClose={handleClose}
-      /> */}
+        open={openTransactionSubmit}
+        onClose={() => setOpenTransactionSubmit(false)}
+      />
     </div>
   );
 }
