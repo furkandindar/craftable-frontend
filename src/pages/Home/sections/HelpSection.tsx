@@ -17,7 +17,7 @@ const HelpItem = (props: HelpItemProps) => {
                 {props.icon}
             </Grid>
             <Typography gutterBottom variant='body2' fontWeight="bold" align='center'>{props.title}</Typography>
-            <Typography variant="caption" align='center' sx={{color:"rgba(0,0,0,0.5)"}}>{props.desctiption}</Typography>
+            <Typography variant="caption" align='center'>{props.desctiption}</Typography>
         </Stack>
     );
 }
@@ -30,16 +30,16 @@ const HelpSection = () => {
         </Grid>
         <Grid item container direction="row" spacing={3} justifyContent="center">
             <Grid item xs={12} md={3}>
-            <HelpItem icon={<WalletIcon/>} title="Create your wallet" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
+            <HelpItem icon={<WalletIcon color="primary"/>} title="Create your wallet" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
             </Grid>
             <Grid item xs={12} md={3}>
-            <HelpItem icon={<CollectionIcon/>} title="Create your collection" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
+            <HelpItem icon={<CollectionIcon color="primary"/>} title="Create your collection" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
             </Grid>
             <Grid item xs={12} md={3}>
             <HelpItem icon={<NftIcon color="primary"/>} title="Add your NFT's" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
             </Grid>
             <Grid item xs={12} md={3}>
-            <HelpItem icon={<SaleIcon/>} title="List them for sale" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
+            <HelpItem icon={<SaleIcon color="primary"/>} title="List them for sale" desctiption='It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'></HelpItem>
         </Grid>
         </Grid>
     </Grid>

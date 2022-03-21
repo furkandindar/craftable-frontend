@@ -17,8 +17,12 @@ const StakeItemCard = (props: StakeItemProps) => {
     setChecked(event.target.checked);
   };
 
+  const handleClick = () => {
+    setChecked(!checked);
+  }
+
   return (
-    <Box position={"relative"}>
+    <Box position={"relative"} sx={{cursor:"pointer"}} onClick={handleClick}>
         <img width={"100%"} style={{borderRadius:"10px"}} src={require("../assets/pending-craft.png")}/>
         <Checkbox checked={checked} onChange={handleChange} sx={{position:"absolute", right:"0%"}}/>
     </Box>

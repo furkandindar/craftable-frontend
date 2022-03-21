@@ -49,7 +49,7 @@ const EarnCard = () => {
                 <Grid item container direction={"column"} xs={6} md={3}>
                     <Grid item container alignItems={"center"}>
                         <Typography pr={0.5}>Base APR</Typography>
-                        <Tooltip title="Each staked Craft mint AP/day " placement='top' arrow>
+                        <Tooltip title="Withdrawal fees in Craftable range from 25% to 0.01%" placement='top' arrow>
                             <InfoOutlinedIcon sx={{fontSize:"16px"}}/>
                         </Tooltip>
                     </Grid>
@@ -58,8 +58,12 @@ const EarnCard = () => {
                     </Grid>
                 </Grid>
                 <Grid item container direction={"column"} xs={6} md={3}>
-                    <Grid item>
-                        <Typography>Avg. Boosted APR</Typography>
+                    <Grid item container alignItems={"center"}>
+                        <Typography pr={0.5}>Avg. Boosted APR</Typography>
+                        <Tooltip title="The avarage boosted APR of this pool for the users who have staked UST and their Alchemy Power. 
+Half of the users get higher than the avarege APR. It does not include the Base APR." placement='top' arrow>
+                            <InfoOutlinedIcon sx={{fontSize:"16px"}}/>
+                        </Tooltip>
                     </Grid>
                     <Grid item>
                         <Typography variant='h6'>247%</Typography>

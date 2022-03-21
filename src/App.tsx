@@ -36,7 +36,11 @@ const App = () => {
             main: "#E3E3E3",
             dark: "#AFAFAF",
             light: "#707070"
-          }
+          },
+          // background: {
+          //   default: "#F9F9F9",
+          //   paper: "#F9F9F9",
+          // }
         },
         typography: {
           fontFamily: [
@@ -55,8 +59,17 @@ const App = () => {
         palette: {
           mode,
           text: {
-            secondary: "#234555"
-          }
+            secondary: "#82368C"
+          },
+          primary: {
+            main: "#82368C",
+            dark: "#5D2664",
+          },
+          secondary: {
+            main: "#E3E3E3",
+            dark: "#AFAFAF",
+            light: "#707070"
+          },
         },
         typography: {
           fontFamily: [
@@ -76,32 +89,8 @@ const App = () => {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout childComponent={<Home></Home>} theme={theme} />}/>
-          <Route path="/Bond" element={<Layout childComponent={<Bond></Bond>} theme={theme} />} />
-          <Route path="/nftId" element={<Layout childComponent={<NftDetail/>} theme={theme}/>}/>
-          <Route path="/marketplace" element={<Layout childComponent={<MarketPlace/>} theme={theme}/>}>
-            <Route path=":nftId" element={<Layout childComponent={<NftDetail/>} theme={theme}/>}/>
-          </Route>
-          <Route path="/createchest" element={<Layout childComponent={<CreateChest></CreateChest>} theme={theme} />} />
-          <Route path="/createnft" element={<Layout childComponent={<CreateNft></CreateNft>} theme={theme} />} />
-          <Route path="/dashboard" element={<Layout childComponent={<Dashboard/>} theme={theme} />} />
-          <Route path="/create" element={<Layout childComponent={<CreateChestNft></CreateChestNft>} theme={theme} />} />
-          <Route path="/create/chest" element={<Layout childComponent={<CreateChest></CreateChest>} theme={theme} />} />
-          <Route path="/create/nft" element={<Layout childComponent={<CreateNft></CreateNft>} theme={theme} />} />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>There's nothing here!</p>
-              </main>
-            }
-          />
-        </Routes>
-      </BrowserRouter> */}
       <ThemeProvider theme={theme}>
-            <Paper square>
+            <Paper square sx={mode === "light" ? {background:"#f9f9f9"} : {background:"#121212"}}>
                 <Grid container direction="column" spacing={3}>
                     <Grid item>
                         <NavBar />

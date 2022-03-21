@@ -45,18 +45,6 @@ const SortSection = () => {
   const [chipData, setChipData] = React.useState<readonly ChipData[]>([
     { key: 0, label: 'Buy Now' },
     { key: 1, label: 'Username' },
-    { key: 2, label: 'Buy Now' },
-    { key: 3, label: 'Username' },
-    { key: 4, label: 'Buy Now' },
-    { key: 5, label: 'Username' },
-    { key: 6, label: 'Buy Now' },
-    { key: 7, label: 'Username' },
-    { key: 8, label: 'Buy Now' },
-    { key: 9, label: 'Username' },
-    { key: 10, label: 'Buy Now' },
-    { key: 11, label: 'Username' },
-    { key: 12, label: 'Buy Now' },
-    { key: 13, label: 'Username' },
   ]);
 
   const handleDelete = (chipToDelete: ChipData) => () => {
@@ -66,7 +54,7 @@ const SortSection = () => {
       <Grid container direction="row" sx={{justifyContent:{xs:"center", md:"space-between"}}} spacing={3} marginBottom={3}>
           <Grid item xs={12} md={8.5}>
                 {chipData.map((data) => (
-                            <Chip sx={{margin:0.5, backgroundColor:"white", boxShadow: '1px 1px 1px 1px rgba(0,0,0,0.25)'}} deleteIcon={<ClearIcon/>} onDelete={handleDelete(data)} label={data.label}/>
+                            <Chip sx={{margin:0.5, boxShadow: '1px 1px 1px 1px rgba(0,0,0,0.25)'}} deleteIcon={<ClearIcon/>} onDelete={handleDelete(data)} label={data.label}/>
                     ))}
           </Grid>
           <Grid item xs={7} md={3.5}>

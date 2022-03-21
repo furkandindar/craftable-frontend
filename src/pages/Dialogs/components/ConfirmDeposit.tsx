@@ -4,6 +4,8 @@ import { AvaxIcon } from '../../../assets/icons';
 import { CustomButtonPurple, CustomButtonSecondary, CustomButtonWhite } from '../../../components/CustomButtons';
 import CustomImageHolder from '../../../components/CustomImageHolder';
 import CustomTextField from '../../../components/CustomTextField';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import Tooltip from '@mui/material/Tooltip';
 
 export interface ConfirmDepositProps {
   open: boolean;
@@ -54,10 +56,13 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
                   $1
                 </Typography>
               </Grid>
-              <Grid item xs={6} >
-                <Typography>
-                  Free
+              <Grid item container alignItems={"center"} xs={6} >
+                <Typography pr={0.5}>
+                  Fee
                 </Typography>
+                <Tooltip title="Withdrawal fees in Craftable range from 25% to 0.01%" placement='top' arrow>
+                    <InfoOutlinedIcon fontSize='small'/>
+                </Tooltip>
               </Grid>
               <Grid item xs={6}>
                 <Typography textAlign={"right"}>
@@ -65,10 +70,13 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
                 </Typography>
               </Grid>
 
-              <Grid item xs={6} paddingTop={10}>
-                <Typography>
+              <Grid item container alignItems={"center"} xs={6} >
+                <Typography pr={0.5}>
                   My Liquidity
                 </Typography>
+                <Tooltip title="Liquidity owned by you after adding liquidity." placement='top' arrow>
+                    <InfoOutlinedIcon fontSize='small'/>
+                </Tooltip>
               </Grid>
 
               <Grid item xs={6}>
@@ -77,10 +85,13 @@ function ConfirmDeposit(props: ConfirmDepositProps) {
                 </Typography>
               </Grid>
 
-              <Grid item xs={6}>
-                <Typography>
+              <Grid item container alignItems={"center"} xs={6} >
+                <Typography pr={0.5}>
                   Pool Share
                 </Typography>
+                <Tooltip title="Percentage of the token pool you will own after adding the liquidity." placement='top' arrow>
+                    <InfoOutlinedIcon fontSize='small'/>
+                </Tooltip>
               </Grid>
               <Grid item xs={6}>
                 <Typography textAlign={"right"}>

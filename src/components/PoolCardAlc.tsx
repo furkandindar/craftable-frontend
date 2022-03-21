@@ -1,5 +1,5 @@
 import { Grid, Paper, Typography } from '@mui/material'
-import { CustomButtonPrimary } from './CustomButtons'
+import { CustomButtonGradient, CustomButtonPrimary } from './CustomButtons'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Tooltip from '@mui/material/Tooltip';
 
@@ -73,7 +73,7 @@ const PoolCardAlc = () => {
                 </Grid>
                 <Grid item xs={12} md={1} container spacing={1} sx={{justifyContent:{xs:"center"}}}>
                     <Grid item xs={6} md={12}>
-                        <CustomButtonPrimary disableRipple fullWidth>Deposit</CustomButtonPrimary>
+                        <CustomButtonGradient disableRipple fullWidth>Claim</CustomButtonGradient>
                     </Grid>
                 </Grid>
             </Grid>

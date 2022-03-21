@@ -1,13 +1,14 @@
 import { LinearProgress, Link, Paper, Stack, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import { CustomButtonPurple } from '../../components/CustomButtons';
+import { CustomButtonPrimary, CustomButtonPurple } from '../../components/CustomButtons';
 
-const GovernanceDetail = () => {
+const Polls = () => {
     const [progress, setProgress] = React.useState(20);
 
     return (
-        <>
+        <Grid container>
+            <Grid item>
             <Paper sx={{ padding: 5 }}>
                 <Grid container justifyContent="space-between">
                     <Typography>
@@ -26,12 +27,12 @@ const GovernanceDetail = () => {
                     <Typography variant={"h6"}>
                         Register Liquidation Queue Contract
                     </Typography>
-                    <CustomButtonPurple sx={{
+                    <CustomButtonPrimary sx={{
                         width: 120
-                        , height: 60
-                    }}>
+                        , height: 50
+                    }} disableRipple>
                         Vote
-                    </CustomButtonPurple>
+                    </CustomButtonPrimary>
                 </Grid>
                 <Grid container paddingTop={15} spacing={4}>
                     <Grid item xs={6}>
@@ -143,16 +144,18 @@ const GovernanceDetail = () => {
                     </Grid>
                 </Grid>
                 <Stack alignItems={"center"} paddingTop={15}>
-                    <CustomButtonPurple sx={{ width: 200, height: 60 }} >See Raw Msgs</CustomButtonPurple>
+                    <CustomButtonPrimary disableRipple sx={{ width: 200, height: 50 }} >See Raw Msgs</CustomButtonPrimary>
                 </Stack>
             </Paper>
+            </Grid>
+            <Grid item width="100%">
             <Paper sx={{ padding: 5, marginTop: 10 }}>
                 <Typography variant={"h6"}>Vote Details</Typography>
                 <Stack paddingTop={3}>
                     <Typography paddingLeft={9}>Pass Threshold</Typography>
-                    <LinearProgress variant="determinate" value={progress} />
+                    <LinearProgress sx={{ height: 6, borderRadius: 5, border:"1px solid",borderColor:"primary.main", backgroundColor:"white", "& .MuiLinearProgress-bar":{backgroundColor:"primary.main"} }} variant="determinate" value={progress} />
                 </Stack>
-                <Grid container justifyContent={"center"} direction="row" spacing={3} paddingTop={10}>
+                <Grid container justifyContent={"center"} direction="row" spacing={3} paddingTop={5}>
                     <Grid item xs={4} justifyContent={"center"} direction="row">
                         <Paper
                             sx={{
@@ -209,8 +212,9 @@ const GovernanceDetail = () => {
                     </Grid>
                 </Grid>
             </Paper>
-        </>
+            </Grid>
+        </Grid>
     );
 };
 
-export default GovernanceDetail;
+export default Polls;
