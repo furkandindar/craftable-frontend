@@ -1,21 +1,29 @@
 import { Paper, Grid, Typography, LinearProgress } from '@mui/material';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const paperBox = {
     p: 4,
     '&:hover': {
         color: "#fff",
-        backgroundColor: "primary.main"      
+        backgroundColor: "primary.main",
+        cursor: "pointer",   
     }
 }
 
 const PollCardView = () => {
 
+    let navigate = useNavigate();
+
+    const handlePollClick = () => {
+        navigate("polls/1");
+    }
+
   const [progress, setProgress] = React.useState(20);
   const [hovered, setHovered] = React.useState<boolean>(false);
 
   return (
-    <Paper sx={paperBox} onMouseEnter={() => {setHovered(true)}} onMouseLeave={() => {setHovered(false)}}>
+    <Paper sx={paperBox} onClick={handlePollClick} onMouseEnter={() => {setHovered(true)}} onMouseLeave={() => {setHovered(false)}}>
         <Grid container direction={"column"}>
             <Grid item container>
                 <Grid item xs={12} md={6} >

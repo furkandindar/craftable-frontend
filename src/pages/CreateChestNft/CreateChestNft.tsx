@@ -12,15 +12,12 @@ const CreateChestNft = () => {
         <Grid container direction="row" spacing={3}>
             <Grid item xs={12} rowSpacing={3}>
                 <Grid container justifyContent={"center"} direction="row" spacing={2}>
-                    <Grid item xs={6} justifyContent={"center"} direction="row">
+                    <Grid item xs={12} md={6} justifyContent={"center"} direction="row">
                         <Paper
                             sx={{
                                 padding: 10,
-                                backgroundColor: "primary.main", color: "white", '& .MuiMenuItem-root': {
-                                    borderBottom: "1px solid white",
-                                },
-                                '& .MuiMenuItem-root:last-child': {
-                                    borderBottom: 'none'
+                                '&:hover':{
+                                    backgroundColor: "primary.main", color: "white"
                                 }
                             }}>
                             <Stack spacing={4} alignItems={"center"}>
@@ -28,20 +25,17 @@ const CreateChestNft = () => {
                                 <Typography variant='h4'>Chest</Typography>
                                 <Typography align='center'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Typography>
                                
-                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/create/chest"> <CustomButtonWhite sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonWhite></Link>
+                                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/create/chest"> <CustomButtonGradient sx={{ width: 120 }} disableRipple size='large'>Create</CustomButtonGradient></Link>
 
                             </Stack>
                         </Paper>
                     </Grid>
-                    <Grid item xs={6} justifyContent={"center"} direction="row">
+                    <Grid item xs={12} md={6} justifyContent={"center"} direction="row">
                         <Paper
                             sx={{
                                 padding: 10,
-                              '& .MuiMenuItem-root': {
-                                    borderBottom: "1px solid white",
-                                },
-                                '& .MuiMenuItem-root:last-child': {
-                                    borderBottom: 'none'
+                                '&:hover':{
+                                    backgroundColor: "primary.main", color: "white"
                                 }
                             }}>
                             <Stack spacing={4} alignItems={"center"}>

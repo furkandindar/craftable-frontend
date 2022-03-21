@@ -12,13 +12,18 @@ import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import backgroundImg from "../assets/footer_bg.png";
 import Paper from '@mui/material/Paper';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import CustomButton from './CustomButton';
 import { MediumIcon, TelegramIcon } from '../assets/icons';
 
-const siteLinks = ['Explore','Company','Bond','Craft','Governance','Connect Wallet','Marketplace'];
+interface siteLink{
+    text: string,
+    to: string,
+}
+
+const siteLinks: siteLink[] = [{text:'Explore',to:"explore"},{text:'Company',to:"company"},{text:'Bond',to:"bond"},{text:'Craft',to:"craft"},{text:'Governance',to:"governance"},{text:'Marketplace',to:"marketplace"}];
 const otherLinks = ['My Dashboard',"NFT's","New"];
 const helpLinks = ['Help Desk', 'Who We Are', 'How To Craft', 'How To Create Chest', 'How To Create NFT'];
 
@@ -31,7 +36,10 @@ const CustomLink = styled(Link)(({ theme }) => ({
     ...theme.typography,
     color: "white",
     textAlign: "left",
-    
+    cursor:"pointer",
+    "&:hover":{
+        fontWeight: 500,
+    }
   }));
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -60,6 +68,11 @@ const Footer = () => {
             setIsHomePage(false);
         }
     }, [location]);
+    let navigate = useNavigate();
+
+    // const handleLinkClick = (to: string) => {
+    //     navigate(to);
+    // }
     
   return (
       <footer>
@@ -131,7 +144,7 @@ const Footer = () => {
                           <Grid item xs={12} md={4}>
                               <Stack direction="column" spacing={3} sx={{padding:{xs:3,md:0}}}>
                                   {siteLinks.map((link) => (
-                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
+                                      <CustomLink onClick={()=>{navigate(link.to)}} key={link.to!} underline='none'>{link.text}</CustomLink>
                                   ))}
                               </Stack>
                           </Grid>
@@ -175,8 +188,8 @@ const Footer = () => {
                       <Grid item container xs={12} md={8} direction="row">
                           <Grid item container xs={12} md={4} sx={{padding:{xs:3,md:0}}}>
                               <Stack direction="column" spacing={3}>
-                                  {siteLinks.map((link) => (
-                                      <CustomLink key={link} underline='none'>{link}</CustomLink>
+                                  {siteLinks.map((link, index) => (
+                                      <CustomLink onClick={()=>{navigate(link.to)}} key={link.to!} underline='none'>{link.text}</CustomLink>
                                   ))}
                               </Stack>
                           </Grid>

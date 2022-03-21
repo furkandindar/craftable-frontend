@@ -103,7 +103,7 @@ const TopCollectionsSection = () => {
         </Grid>
         <Grid item container justifyContent="center">
             <Grid item xs={2}>
-                <CustomButtonPrimary fullWidth size='large' disableRipple onClick={handleExpand}>Go to Rankings</CustomButtonPrimary>
+                <CustomButtonPrimary fullWidth size='large' disableRipple onClick={handleExpand}>{expand ? "Show Less" : "Load More"}</CustomButtonPrimary>
             </Grid>
         </Grid>
     </Grid>

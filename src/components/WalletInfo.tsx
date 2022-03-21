@@ -23,7 +23,7 @@ const CreateButton = styled(Button)<ButtonProps>(({theme}) => ({
 function WalletInfo() {
   return (
           // <CreateButton>0xeaC9..99F4</CreateButton>
-          <Box sx={{marginX:2,borderRadius:25, paddingRight:1}} bgcolor="secondary.main">
+          <Box sx={{marginX:2,borderRadius:25, paddingRight:1, background:"red"}}>
             <Grid container alignItems="center" spacing={0.5}>
               <Grid item>
                 <Avatar sx={{backgroundColor:"primary.main", height:"50px", width:"50px", "&:hover":{backgroundColor:"yellow"}}}>d</Avatar>

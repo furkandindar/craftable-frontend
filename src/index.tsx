@@ -14,13 +14,13 @@ import CreateNft from './pages/CreateNft/CreateNft';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Earn from './pages/Earn/Earn';
 import DialogBase from './pages/Dialogs/DialogBase';
-import GovernanceDetail from './pages/GovernanceDetail/GovernanceDetail';
 import Home from './pages/Home/Home';
 import MarketPlace from './pages/MarketPlace/MarketPlace';
 import NftDetail from './pages/NftDetail/NftDetail';
 import reportWebVitals from './reportWebVitals';
 import Governance from './pages/Governance/Governance';
 import Explore from './pages/Explore/Explore';
+import Polls from './pages/Polls/Polls';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -41,7 +41,7 @@ ReactDOM.render(
           <Route path="craft" element={<Craft/>}/>
           <Route path="collection/:collectionId" element={<CollectionProfile/>}/>
           <Route path="earn" element={<Earn/>}/>
-          <Route path='governance/detail' element={<GovernanceDetail />}/>
+          <Route path='governance/polls/:pollId' element={<Polls />}/>
           <Route path='company' element={<Company />}/>
           <Route path='governance' element={<Governance />}/>
           <Route path='explore' element={<Explore/>}></Route>

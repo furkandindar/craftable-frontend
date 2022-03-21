@@ -23,6 +23,7 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { DarkThemeIcon } from '../assets/icons';
 
 export const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
 
@@ -287,24 +288,24 @@ function NavBar() {
             <Stack direction="row" spacing={3} alignItems="center">
               {isLoggedIn ? <>
                 <ExploreMenu/>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
-                <Link component={RouterLink} underline="none" color="inherit"  sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/bond">Bond</Link>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/craft">Craft</Link>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/governance">Governance</Link>
+                <Link component={RouterLink} underline="none" color={theme.palette.mode === 'dark' ? "white" : "black"} sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
+                <Link component={RouterLink} underline="none" color={theme.palette.mode === 'dark' ? "white" : "black"} sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/bond">Bond</Link>
+                <Link component={RouterLink} underline="none" color={theme.palette.mode === 'dark' ? "white" : "black"} sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/craft">Craft</Link>
+                <Link component={RouterLink} underline="none" color={theme.palette.mode === 'dark' ? "white" : "black"} sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/governance">Governance</Link>
               </>
                : 
                <>
                 <ExploreMenu/>
-                <Link component={RouterLink} underline="none" color="inherit" sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
+                <Link component={RouterLink} underline="none" color={theme.palette.mode === 'dark' ? "white" : "black"} sx={{fontFamily:"Poppins", '&:hover': {color:"primary.main", fontWeight:"bold"}}} to="/earn">Earn</Link>
                </>}
             </Stack>
           </Box>
           <Box sx={{display: { xs: 'none', md: 'flex', justifyContent: "flex-end" } }}>
-          <IconButton sx={{ mx: 3 }} onClick={colorMode.toggleColorMode} color="inherit">
-               {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          <IconButton sx={{ mx: 3, border:"0.5px solid #838383" }} onClick={colorMode.toggleColorMode} color="inherit">
+               {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkThemeIcon style={{width:"24px", height:"24px", color:"#626262"}} />}
              </IconButton>
              {isLoggedIn ?
-               <Box sx={{ marginRight: 2, borderRadius: 50 }} bgcolor="secondary.main">
+               <Box sx={{ marginRight: 2, borderRadius: 50 }} bgcolor={theme.palette.mode === 'dark' ? "#707070" : "#E3E3E3"}>
                  <Grid container alignItems="center" spacing={0.5}>
                    <Grid item>
                      <div>
@@ -340,7 +341,7 @@ function NavBar() {
                             horizontal: 'center',
                           }}
                         >
-                              <Paper sx={{backgroundColor:"primary.main", color:"white",'& .MuiMenuItem-root':{
+                              <Paper sx={{backgroundColor:"primary.dark", color:"white",'& .MuiMenuItem-root':{
                                   borderBottom: "1px solid white",
                               },
                               '& .MuiMenuItem-root:last-child':{

@@ -4,6 +4,8 @@ import React from 'react';
 import { AvaxIcon } from '../../../assets/icons';
 import { CustomButtonPurple, CustomButtonSecondary, CustomButtonWhite } from '../../../components/CustomButtons';
 import CustomImageHolder from '../../../components/CustomImageHolder';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import Tooltip from '@mui/material/Tooltip';
 
 export interface ConfirmWithdrawProps {
   open: boolean;
@@ -100,10 +102,13 @@ function ConfirmWithdraw(props: ConfirmWithdrawProps) {
                   1.41 USDT.e
                 </Typography>
               </Grid>
-              <Grid item xs={6} >
-                <Typography>
-                  Free
+              <Grid item container alignItems={"center"} xs={6} >
+                <Typography pr={0.5}>
+                  Fee
                 </Typography>
+                <Tooltip title="Withdrawal fees in Craftable range from 25% to 0.01%" placement='top' arrow>
+                    <InfoOutlinedIcon fontSize='small'/>
+                </Tooltip>
               </Grid>
               <Grid item xs={6}>
                 <Typography textAlign={"right"}>
@@ -111,10 +116,13 @@ function ConfirmWithdraw(props: ConfirmWithdrawProps) {
                 </Typography>
               </Grid>
 
-              <Grid item xs={6} paddingTop={10}>
-                <Typography>
+              <Grid item container alignItems={"center"} xs={6} >
+                <Typography pr={0.5}>
                   Minimum Received
                 </Typography>
+                <Tooltip title="Your transaction will fail if you’re unable to receive at least this amount." placement='top' arrow>
+                    <InfoOutlinedIcon fontSize='small'/>
+                </Tooltip>
               </Grid>
 
               <Grid item xs={6}>
