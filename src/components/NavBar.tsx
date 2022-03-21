@@ -341,7 +341,7 @@ function NavBar() {
                             horizontal: 'center',
                           }}
                         >
-                              <Paper sx={{backgroundColor:"primary.dark", color:"white",'& .MuiMenuItem-root':{
+                              <Paper sx={{backgroundColor:"primary.main", color:"white",'& .MuiMenuItem-root':{
                                   borderBottom: "1px solid white",
                               },
                               '& .MuiMenuItem-root:last-child':{
