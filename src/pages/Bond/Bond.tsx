@@ -2,11 +2,19 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
+import { Swiper, SwiperSlide } from "swiper/react";
+import _ from "lodash";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Pagination } from "swiper";
+import MiniNftCard from '../../components/MiniNftCard';
 
 const Bond = () => {
     return (
         <Grid container spacing={1}>
-            <Grid item container justifyContent={"center"}>
+            {/* <Grid item container justifyContent={"center"}>
                 <Grid item xs={4} md={2}>
                     <img width={"100%"} src='../../craftableLogo1K.png'/>
                 </Grid>
@@ -27,6 +35,44 @@ const Bond = () => {
                         WebkitTextFillColor: "transparent",
                     }} variant='h2'>Bond is coming soon!</Typography>
                 </Grid>
+            </Grid> */}
+            <Grid item xs={12} sx={{backgroundColor:"red"}}>
+            <Swiper
+              slidesPerView={6}
+              spaceBetween={10}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              >
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                      <MiniNftCard/>
+                  </SwiperSlide>
+              </Swiper>
             </Grid>
         </Grid>
     );

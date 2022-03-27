@@ -12,14 +12,14 @@ const CreateNft= () => {
         <Grid container direction="row" spacing={3}>
             <Grid item xs={12} rowSpacing={3}>
                     <Grid container justifyContent={"center"} direction="row" spacing={2}>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} md={4}>
                             <Stack spacing={1}>
                                 <Typography variant='h6'>Logo Image</Typography>
                                 <Typography>Recommended size is 300x300 Max 1MB.</Typography>
                                 <CustomUploader />
                             </Stack>
                         </Grid>
-                        <Grid item xs={8}>
+                        <Grid item xs={12} md={8}>
                             <Stack spacing={1}>
                                 <Typography variant='h6'>Banner Image</Typography>
                                 <Typography>Recommended size is 1195x150 (PNG,JPEG) Max 3MB.</Typography>
@@ -42,7 +42,7 @@ const CreateNft= () => {
                     <Stack spacing={1}>
                         <Typography variant='h6'>Description</Typography>
                         <Typography>Add a description to your collection. This will appear on the collection page.</Typography>
-                        <CustomTextField placeholder='Collection description' multiline rows={5}></CustomTextField>
+                        <CustomTextField placeholder='Collection description' multiline></CustomTextField>
                     </Stack>
                 </Paper>
             </Grid>
@@ -50,32 +50,32 @@ const CreateNft= () => {
                 <Paper sx={{ padding: 4 }}>
                     <Stack spacing={1}>
                         <Typography variant='h6'>Description</Typography>
-                        <Grid container justifyContent={"space-between"} direction="row" spacing={2}>
-                            <Grid item xs={1}>
+                        <Grid container justifyContent={"space-evenly"} direction="row">
+                            <Grid item>
                                 <FormControlLabel value="Art" control={<Radio />} label="Art" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Collectibles" control={<Radio />} label="Collectibles" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Games" control={<Radio />} label="Games" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Music" control={<Radio />} label="Music" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="NSFW" control={<Radio />} label="NSFW" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Sports" control={<Radio />} label="Sports" />
                             </Grid>
-                            <Grid item xs={1}>
-                                <FormControlLabel value="Tranding Cards" control={<Radio />} label="Tranding Cards" />
+                            <Grid item>
+                                <FormControlLabel value="Trading Cards" control={<Radio />} label="Trading Cards" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Utility" control={<Radio />} label="Utility" />
                             </Grid>
-                            <Grid item xs={1}>
+                            <Grid item>
                                 <FormControlLabel value="Video" control={<Radio />} label="Video" />
                             </Grid>
                         </Grid>
@@ -150,7 +150,7 @@ const CreateNft= () => {
                 </Paper>
             </Grid>
             <Grid item xs={12}>
-                <Grid container justifyContent="flex-end">
+                <Grid container sx={{justifyContent:{xs:"center", md:"flex-end"}}}>
                     <CustomButtonPrimary disableRipple size='large'>Create Collection</CustomButtonPrimary>
                 </Grid>
             </Grid>

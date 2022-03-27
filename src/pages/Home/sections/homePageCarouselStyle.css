@@ -1,0 +1,7 @@
+.customNext,.customPrev, .customPrevResource, .customNextResource{
+    color: #82368c;
+}
+
+.swiper-pagination-bullet{
+    background: #82368c;
+}

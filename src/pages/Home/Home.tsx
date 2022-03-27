@@ -11,26 +11,26 @@ import Box from '@mui/material/Box';
 
 const Home = () => {
   return (
-          <Grid container direction="column" spacing={10}>
-          <Grid item>
+          <Grid container spacing={10}>
+          <Grid item xs={12}>
               <MainSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <ExploreSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <RecentlyListedSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <TopCollectionsSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <BrowseSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <HelpSection/>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
               <ResourcesSection/>
           </Grid>
       </Grid>

@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import "./proposalCarouselStyle.css";
 
 // import required modules
 import { Navigation } from "swiper";
@@ -114,27 +115,41 @@ const Governance = () => {
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={4} justifyContent={"center"} direction="row">
-                    <Paper sx={paperStyle}>
-                        <Swiper navigation={true} modules={[Navigation]}>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProposalItem/>
-                            </SwiperSlide>
-                        </Swiper>
+                    <Paper sx={{width:"100%",height:"100%",backgroundColor:"primary.main",color:"white", px:1, py:3}}>
+                        <Grid container>
+                            <Grid item container alignItems={"center"} width={23}>
+                                <div className='swiper-button-prev customPrevGov' style={{position:"static", zIndex:20}}/>
+                            </Grid>
+                            <Grid item container width={"calc(100% - 46px)"} justifyContent={"center"}>
+                                <Swiper navigation={{
+                                nextEl: '.customNextGov',
+                                prevEl: '.customPrevGov',
+                                }} 
+                                modules={[Navigation]}>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <ProposalItem/>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </Grid>
+                            <Grid item container justifyContent={"flex-end"} alignItems={"center"} width={23}>
+                                <div className='swiper-button-next customNextGov' style={{position:"static", zIndex:15}}/>
+                            </Grid>
+                        </Grid>
                     </Paper>
                 </Grid>
             </Grid>
@@ -264,7 +279,6 @@ const Governance = () => {
                             <Grid item xs={9}>
                                 <Paper sx={{p:1,height:"60vh", overflowY:"scroll"}}>
                                     <Grid container>
-                                        
                                         {_.times(9,i => (
                                             <Grid key={i} item xs={3}>
                                                 <StakeItemCard checked={chooseAll}/>

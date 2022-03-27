@@ -27,7 +27,7 @@ const MiniNftCard = () => {
         height="140px"
         image={require("../assets/mainCardPlaceholder.jpeg")}
         alt="NFT"
-        sx={{paddingX:"5px"}}
+        sx={{paddingX:"5px", borderRadius:1}}
       />
     <CardContent sx={{paddingX:"5px", paddingY:"0.75rem"}}>
       <Stack direction="column">
